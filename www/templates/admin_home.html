@@ -1,0 +1,55 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}Administration{% endblock %}
+{% block body %}
+
+<h1>HackIllinois Administration</h1>
+<div class="row">
+  <div class="col-sm-12 top-buffer">
+    <h3>Announcements</h3>
+    <div class="panel panel-default">
+      <div class="panel-heading">New Release (1/26/2016)</div>
+      <div class="panel-body">
+        We've made a few back-end changes since last week:
+        <ul>
+          <li>
+            We now have dedicated API endpoints for authentication and user retrieval. The auth endpoint is accessible via a POST request made to /api/v1/auth while the user endpoint is accessible via a GET request to /api/v1/users/&lt;id&gt; where &lt;id&gt; is
+            the ID of the desired user. Note that Hackers can request themselves, but cannot see information other than their registration information. Administrators and Staff can see everything (about anyone).
+          </li>
+          <li>
+            We are working on the check-in/scanning functionality. Right now, Sponsors and Mentors are unable to see any information about users via the above endpoint, since this will be taken care of by the scanning endpoint.
+          </li>
+          <li>
+            A bug has been fixed on the main site where users with an expired auth token might not have been able to authenticate again.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">New Release (1/15/2016)</div>
+      <div class="panel-body">
+        There have been quite a few updates:
+        <ul>
+          <li>
+            The User model and its descendants have been overhauled. Permissions and Organizations are now independent entities that can also be found the User entity and on specific descendant entities, respectively, to decrease overall read latency.
+          </li>
+          <li>
+            The review table has been updated with more data, and the ability to search on most of its fields. The total records will no longer be reported accurately for reasons of efficiency, but individuals with access to Google Console can still get a good idea
+            of how many applicants we have by looking at the Hacker entity count.
+          </li>
+          <li>
+            Administrators will see that we have added a user management system. You can create users of any kind and they will be notified via email. From there, they will set their password and fill in the registration form (the latter of which will be excluded
+            if they are mentors or sponsors).
+          </li>
+          <li>
+            A notification wave and (in the case of accepted Hackers) an initiative is required when making a decision on whether an applicant should be accepted, rejected, or waitlisted. Your email will also be recorded when updating a decision.
+          </li>
+          <li>
+            The outline for judging is now available at <a href="//hackillinois.org/judging">hackillinois.org/judging</a> while the devpost link is available at <a href="//hackillinois.org/devpost">hackillinois.org/devpost</a>. The devpost link will not
+            be shown anywhere else on the site until Friday at the earliest.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

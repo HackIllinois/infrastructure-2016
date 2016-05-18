@@ -1,0 +1,26 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}Network Credentials{% endblock %}
+{% block body %}
+
+<h1>Network</h1>
+<div class="row">
+  <div class="col-sm-12 top-buffer">
+    <h3>Credentials</h3>
+    <p>
+      The following will allow you to enter network credentials for use by participants in HackIllinois. Each set of credentials should be entered on its own line, with a comma separating the login and password values.
+    </p>
+    <p>
+      <strong>Note</strong>: There is no validation to prevent duplicate logins.
+    </p>
+    <form id="credentialsUpload" method="POST">
+      <div class="form-group">
+        <textarea rows="5" class="form-control" id="credentials" placeholder="login, password"></textarea>
+      </div>
+      <button type="submit" class="btn btn-default">Upload</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+{% block body_scripts %}
+  <script src="/assets/js/admin_network.min.js"></script>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+
+{% set stats = data.stats %}
+
+<h1>Dashboard</h1>
+<div class="row">
+  {% if not stats %}
+    <div class="col-sm-12 top-buffer">
+      <p>Sorry, but the dashboard stats are currently being re-generated. Please check back in a few minutes.</p>
+    </div>
+  {% else %}
+    <div class="col-sm-6">
+      <h3>Applicants</h3>
+      <dl class="dl-horizontal">
+        <dt>Total</dt>
+        <dd>{{ stats.applicant.total }}</dd>
+        <dt>Software Accepted</dt>
+        <dd>{{ stats.applicant.software.accepted }} ({{ stats.applicant.software.rsvp }} attending)</dd>
+        <dt>Hardware Accepted</dt>
+        <dd>{{ stats.applicant.hardware.accepted }} ({{ stats.applicant.hardware.rsvp }} attending)</dd>
+        <dt>Open Source Accepted</dt>
+        <dd>{{ stats.applicant.open_source.accepted }} ({{ stats.applicant.open_source.rsvp }} attending)</dd>
+        <dt>Waitlisted</dt>
+        <dd>{{ stats.applicant.waitlisted }}</dd>
+        <dt>Rejected</dt>
+        <dd>{{ stats.applicant.rejected }}</dd>
+        <dt>Pending</dt>
+        <dd>{{ stats.applicant.total - stats.applicant.software.accepted - stats.applicant.hardware.accepted - stats.applicant.open_source.accepted - stats.applicant.waitlisted - stats.applicant.rejected }}</dd>
+      </dl>
+    </div>
+    <div class="col-sm-6">
+      <h3>Buses</h3>
+      <dl class="dl-horizontal">
+        <dt>Not Needed</dt>
+        <dd>{{ stats.bus.not_needed }}</dd>
+        <dt>Driving</dt>
+        <dd>{{ stats.bus.driving }}</dd>
+        <dt>UIC-IIT-UChicago</dt>
+        <dd>{{ stats.bus.bus_uic_iit_uchicago }}</dd>
+        <dt>Northwestern-DePaul</dt>
+        <dd>{{ stats.bus.bus_northwestern_depaul }}</dd>
+        <dt>KU-Mizzou</dt>
+        <dd>{{ stats.bus.bus_ku_mizzou }}</dd>
+        <dt>Purdue</dt>
+        <dd>{{ stats.bus.bus_purdue }}</dd>
+        <dt>Rose-Hulman</dt>
+        <dd>{{ stats.bus.bus_rose_hulman }}</dd>
+        <dt>Northwestern</dt>
+        <dd>{{ stats.bus.bus_northwestern }}</dd>
+        <dt>UIC-DePaul</dt>
+        <dd>{{ stats.bus.bus_uic_depaul }}</dd>
+        <dt>IIT-UChicago</dt>
+        <dd>{{ stats.bus.bus_iit_uchicago }}</dd>
+        <dt>Florida-Georgia Tech</dt>
+        <dd>{{ stats.bus.bus_florida_georgia_tech }}</dd>
+        <dt>Wisconsin-Madison</dt>
+        <dd>{{ stats.bus.bus_wisconsin_madison }}</dd>
+      </dl>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

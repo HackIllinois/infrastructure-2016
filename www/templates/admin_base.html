@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <title>HackIllinois &middot; {% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" media="all" type="image/x-icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" media="all" type="image/vnd.microsoft.icon" href="/assets/img/favicon.ico" />
+
+  <link rel="stylesheet" href="/assets/css/admin.min.css" />
+  {% block head_styles %}{% endblock %}
+  {% block head_scripts %}{% endblock %}
+</head>
+
+<body>
+  <nav class="navbar navbar-default" id="admin-navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admin-navbar-collapsed" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/admin">HackIllinois</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="admin-navbar-collapsed">
+        <ul class="nav navbar-nav">
+          <li><a href="/admin/review">Review</a></li>
+          {% if data.user.role in ['ADMINISTRATOR', 'STAFF'] %}
+          <li><a href="/admin/checkin">Check In</a></li>
+          <li><a href="/admin/users">Users</a></li>
+          {% endif %}
+          {% if data.user.permissions|group_by_name('hackillinois.*')|first %}
+          <li><a href="/admin/dashboard">Dashboard</a></li>
+          <li><a href="/admin/notify">Notifications</a></li>
+          <li><a href="/admin/network">Network</a></li>
+          {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id="logout">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-md-2">
+        {% block sidebar %}{% endblock %}
+      </div>
+      <div class="col-sm-9 col-md-10">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  <script src="/assets/js/vendor_admin.min.js"></script>
+  <script src="/assets/js/common.min.js"></script>
+  {% block body_scripts %}{% endblock %}
+
+</body>
+
+</html>

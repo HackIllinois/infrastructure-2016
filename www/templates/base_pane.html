@@ -1,0 +1,49 @@
+{% extends "templates/base.html" %}
+{% set registrant = data.user.registrant %}
+{% set registration = data.user.registrant.registration if data.user.registrant else None %}
+
+{% block body %}
+<header class="status-bar">
+  <div id="app-status-container">
+    <div id="app-status">
+      Application Status:
+      {% block app_status %}
+      {% if registration %}
+        {% if registrant.status == 'ACCEPTED' and registrant.notification_sent %}
+        <span id="app-status-detail" class="status-accepted">Accepted</span> <br />
+          <span>RSVP: </span>
+          {% if registrant.response %}
+            <span id="app-status-result" class="done">Received</span>
+          {% else %}
+            <span id="app-status-result">Not Received</span>
+          {% endif %}
+          <span id="app-status-action">(<a href="/rsvp">Edit</a>)</span>
+        {% else %}
+          <span id="app-status-detail" class="status-complete">Submitted
+            <span class="normal-only" data-registration-date="{{ registration.created|epoch_milliseconds }}"></span>
+          </span>
+        {% endif %}
+      {% else %}
+        <span id="app-status-detail" class="status-incomplete">Incomplete</span>
+      {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+  <div id="auth-status-container">
+    <div id="auth-status">
+      <span class="normal-only">logged in as </span>{{ data.user.email }}
+      <span id="logout" class="log-out">(log out)</span>
+    </div>
+  </div>
+</header>
+<section class="stage">
+  <section class="center-stage">
+    <div class="pane" id="{% block pane_id %}{% endblock %}">
+      <div class="container">
+        {% block pane %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock %}

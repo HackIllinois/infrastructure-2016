@@ -1,0 +1,132 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}User Management{% endblock %}
+{% block body %}
+<h1>User Management</h1>
+<ul class="nav nav-tabs nav-justified top-buffer bottom-buffer">
+  <li role="presentation" class="{{ 'active' if data.mode == 'view' }}"><a href="/admin/users/view">View</a></li>
+  <li role="presentation" class="{{ 'active' if data.mode == 'add' }}"><a href="/admin/users/add">Add</a></li>
+</ul>
+{% if data.mode == 'view' %}
+<div class="row">
+  <div class="col-sm-12">
+    <form id="user-view">
+      <label for="userId">Barcode Number</label>
+      <input type="text" class="form-control" id="userId" name="id" placeholder="Scan a barcode" autocomplete="off" autofocus data-parsley-required data-parsley-type="number" />
+      <button type="submit" id="viewSubmit" class="btn btn-default top-buffer pull-right">Find</button>
+    </form>
+  </div>
+</div>
+{% elif data.mode == 'add' %}
+<form id="user-add">
+  <div class="form-group">
+    <label for="type">User Type</label>
+    <select class="form-control" id="type" name="role">
+      <option selected="selected" disabled>Choose an Option</option>
+      {% if data.user.permissions|group_by_name('hackillinois.*')|first %}
+      <option value="ADMINISTRATOR">Administrator</option>
+      <option value="STAFF">Staff</option>
+      {% endif %}
+      <option value="MENTOR">Mentor</option>
+      <option value="SPONSOR">Sponsor</option>
+      <option value="VOLUNTEER">Volunteer</option>
+      <option value="HACKER">Hacker</option>
+    </select>
+  </div>
+  <div class="form-group hidden">
+    <label for="email">Email address</label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-parsley-required data-parsley-type="email">
+  </div>
+  <div class="form-group hidden">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" data-parsley-required>
+  </div>
+  <div class="form-group hidden">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" data-parsley-required>
+  </div>
+  <div class="form-group hidden">
+    <label for="organization">Organization</label>
+    <select class="form-control" id="organization" name="organization" data-parsley-required>
+      <option selected="selected" disabled>Choose an Option</option>
+      {% for organization in data.organizations %}
+        <option value="{{organization.id}}">{{organization.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group hidden">
+    <label for="newOrganization">Organization Name</label>
+    <input type="text" class="form-control" id="newOrganization" name="organizationName" placeholder="Organization Name" data-parsley-required>
+  </div>
+  <div class="form-group hidden">
+    <label for="tier">Tier</label>
+    <select class="form-control" id="tier" name="organizationTier" data-parsley-required>
+      <option selected="selected" value="NONE" disabled>None</option>
+      <option value="SQUIRREL">Squirrel</option>
+      <option value="OWL">Owl</option>
+      <option value="MOOSE">Moose</option>
+      <option value="BEAR">Bear</option>
+      <option value="WOLF">Wolf</option>
+    </select>
+  </div>
+
+  <div class="checkbox hidden">
+    <label>
+      <input type="checkbox" id="hardware" name="hardware"  value="true"> Hardware checkout
+    </label>
+  </div>
+
+  <div class="checkbox hidden">
+    <label>
+      <input type="checkbox" id="isNewOrganization" name="isNewOrganization" value="true"> Organization not listed
+    </label>
+  </div>
+
+  <div class="form-group hidden">
+    <label for="initiativeSelect">Initiative</label>
+    <div id="initiativeSelect">
+      <label class="radio-inline">
+        <input type="radio" name="initiative" id="initiative-software" value="SOFTWARE" data-parsley-required data-parsley-errors-container="#initiativeSelect"> Software
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="initiative" id="initiative-hardware" value="HARDWARE"> Hardware
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="initiative" id="initiative-opensource" value="OPEN_SOURCE"> Open Source
+      </label>
+    </div>
+  </div>
+
+
+  <div class="form-group hidden">
+    <label for="shirt_size">T-Shirt Size</label>
+    <select class="form-control" name="shirt_size" id="shirt_size">
+      <option selected="selected" disabled>Choose an Option</option>
+      <option value="XS">XS</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+  </div>
+
+
+  <div class="checkbox hidden">
+    <label>
+      <input type="checkbox" class="disabled" id="accepted" name="accepted" disabled checked data-parsley-required> Set as accepted
+    </label>
+  </div>
+  <div class="checkbox hidden">
+    <label>
+      <input type="checkbox" id="walkIn" name="walkIn"  value="true" checked> This hacker is a walk-in
+    </label>
+  </div>
+
+  <button type="submit" id="addSubmit" class="btn btn-default hidden">Submit</button>
+</form>
+{% else %}
+<p> Invalid management mode.</p>
+{% endif %}
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/admin_users.min.js"></script>
+{% endblock %}

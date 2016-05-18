@@ -1,0 +1,16 @@
+h1, h3, h4 {
+  font-weight: normal;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 0;
+}
+h3 {
+  margin-top: 0;
+}
+div#reimbursement-question-row {
+  text-align: center;
+}
+button#submit {
+  @include span-columns(12);
+}

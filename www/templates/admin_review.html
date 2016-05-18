@@ -1,0 +1,69 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}Review{% endblock %}
+{% block body %}
+
+<h1>Applicant Review</h1>
+<div class="row">
+  <div class="col-sm-12 top-buffer">
+    <table class="table table-hover" id="table" width="100%" data-model="HACKER">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>School</th>
+          <th>Graduation</th>
+          <th>Major</th>
+          <th>Initiative(s)</th>
+          <th>Registered</th>
+          <th>Status</th>
+          <th>Wave</th>
+        </tr>
+      </thead>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <p class="small">
+      <b>Note: </b> Hackers added by Administrators in the User Management system will be
+      automatically hidden until their registration is complete. As such, some filters may return
+      fewer results than requested, but still have more pages available.
+    </p>
+  </div>
+</div>
+
+<div class="hidden">
+  <form id="search" class="form-inline">
+    <div class="col-sm-5 col-md-4">
+      <div class="form-group input-group col-xs-12">
+        <select id="select-query" class="form-control">
+          <option value="" selected="">All Fields</option>
+          <option value="email">Email</option>
+          <option value="0">First Name</option>
+          <option value="1">Last Name</option>
+          <option value="2">Gender</option>
+          <option value="3">School</option>
+          <option value="4">Graduation</option>
+          <option value="5">Major</option>
+          <option value="6">Initiative(s)</option>
+          <option value="8">Status</option>
+          <option value="9">Wave</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-7 col-md-8">
+      <div class="input-group col-xs-12">
+        <input id="search-query" type="text" class="form-control hidden" autocomplete="off" placeholder="Query">
+        <span class="input-group-btn">
+          <button id="query-action" class="btn btn-default" type="submit">Refresh</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/admin_review.min.js"></script>
+{% endblock %}

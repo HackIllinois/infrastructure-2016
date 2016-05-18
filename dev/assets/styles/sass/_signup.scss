@@ -1,0 +1,415 @@
+@include keyframes(flash-red) {        // change to red
+    from { background-color: white }
+    50%  { background-color: $orange }
+    to { background-color: white }
+}
+
+html.touch {
+  #volume {
+        display: none;
+    }
+
+    #replay {
+        display: none;
+    }
+}
+
+#volume {
+    display: none;
+	position: absolute;
+	z-index: 11;
+	top: 16px;
+	right: 16px;
+
+	width: 34px;
+	height: 34px;
+
+	background: none;
+	@include background-image(url(../img/icons/volume.png));
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 34px 34px;
+
+	border: none;
+	outline: none;
+
+	@include transition(background-image 0.3s);
+
+	&:hover {
+        @include background-image(url(../img/icons/volume-hover.png));
+	}
+
+	&.muted {
+        @include background-image(url(../img/icons/volume-muted.png));
+
+		&:hover {
+            @include background-image(url(../img/icons/volume-muted-hover.png));
+		}
+	}
+}
+
+#game {
+	display: none;
+
+	&.running {
+		display: block;
+	}
+
+	a {
+		position: fixed;
+		bottom: 16px;
+		right: 26px;
+
+		color: $light-purple;
+		text-decoration: none;
+		@include transition(color 0.3s);
+
+		&:hover {
+			color: #eee;
+		}
+	}
+}
+
+#day, #night {
+	display: block;
+	width: 0;
+
+	visibility: hidden;
+}
+
+#forest {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	cursor: none;
+}
+
+#landing {
+	position: relative;
+	z-index: 10;
+
+	background-color: $background-purple;
+
+	width: 100vw;
+	height: 100vh;
+	min-height: 700px;
+
+	top: 0;
+	left: 0;
+
+	text-align: center;
+	color: #eee;
+
+	> div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+        @include transform(translate(-50%, -50%));
+
+		width: 100%;
+	}
+
+	&.hidden {
+		opacity: 0;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.logo {
+		width: 80px;
+		margin: 0 auto 40px;
+	}
+
+	#compass {
+		width: 100%;
+		max-width: 500px;
+	}
+
+	#replay {
+		display: none;
+		color: $light-purple;
+		text-decoration: none;
+        font-size: 1.1em;
+
+		@include transition(color 0.3s);
+
+		&:hover {
+			color: #eee;
+		}
+
+        &.found {
+            display: block;
+        }
+	}
+
+	.sorry {
+		display: none;
+		margin-top: 50px;
+
+		a {
+			margin: 0;
+			padding: 16px 40px;
+		}
+	}
+}
+
+#compass-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+
+    &.found {
+        #compass-text {
+            display: none;
+        }
+        &:hover {
+            #compass {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:hover {
+        #compass-text {
+            opacity: 1;
+        }
+        #compass {
+            opacity: .5;
+        }
+    }
+
+    #compass {
+    	cursor: pointer;
+    	@include transition(opacity 0.6s);
+    }
+
+    .fireflies {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: -1;
+	}
+
+    #compass-text {
+        font-size: 2em;
+        font-weight: bold;
+
+        position: absolute;
+        left: -13px;
+        top: 0;
+        text-align: center;
+        line-height: 230px;     // this sucks
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+        @include transition(opacity 0.3s);
+        cursor: pointer;
+    }
+}
+
+.logo {
+	margin-bottom: 50px;
+}
+
+#event-title, #found-title{
+	font: {
+		size: 2.3em;
+		family: 'BrandonReg';
+	}
+	letter-spacing: 2px;
+    margin-bottom: 10px;
+
+    &.found {
+        display: none;
+    }
+}
+
+#found-title {
+    display: none;
+    color: $orange;
+
+    &.found {
+        display: block;
+    }
+}
+
+.event-date {
+	font: {
+		size: 1.3em;
+		family: 'BrandonReg';
+	}
+	letter-spacing: 2px;
+    margin: 0px;
+}
+
+#form-text {
+    display: block;
+	color: $light-purple;
+}
+
+.form-wrapper {
+	margin: 30px auto 40px;
+	width: 100%;
+	max-width: 500px;
+
+    position: relative;
+}
+
+.button-group {
+	margin: 30px auto 40px;
+	width: 100%;
+	max-width: 500px;
+  position: relative;
+}
+
+#form-input, #sponsor, #register {
+	box-sizing: border-box;
+	height: 40px;
+	margin: 0;
+
+	border: none;
+	border-radius: 20px;
+	outline: none;
+}
+
+#form-input {
+	width: calc(100% - 106px);
+
+	color: #222;
+	padding-left: 18px;
+
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+    @include transition(color 0.3s);
+    @include transition(background-color 0.3s);
+
+    &.flash {
+        @include animation(flash-red .75s ease-out);
+    }
+
+}
+
+#submit {
+	position: relative;
+	left: -4px;
+	width: 100px;
+
+	font: { family: 'BrandonReg'; size: 1.1em; }
+
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	border: none;
+	outline: none;
+
+	background-color: $red-orange;
+	color: #eee;
+
+	@include transition(color 0.3s);
+    @include transition(background-color 0.3s);
+
+	&:hover {
+		background-color: #fff;
+		color: $orange;
+	}
+}
+
+#sponsor, #register {
+	width: 100px;
+  margin: 0.75em;
+
+	font: { family: 'BrandonReg'; size: 1.1em; }
+
+	border: none;
+	outline: none;
+
+	background-color: $red-orange;
+	color: #eee;
+
+	@include transition(color 0.3s);
+    @include transition(background-color 0.3s);
+
+	&:hover {
+		background-color: #fff;
+		color: $orange;
+	}
+}
+
+#submit-text {
+    display: none;
+	color: $orange;
+    font-size: 2.5em;
+
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 30%; left: 0; bottom: 0; right: 0;
+}
+
+@media only screen and (max-width: 500px) {
+	.form-wrapper {
+		box-sizing: border-box;
+		padding: 0 30px;
+	}
+
+	#form-input, #submit {
+		width: 100%;
+		border-radius: 20px;
+	}
+
+	#form-input {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+
+		text-align: center;
+		padding-left: 0;
+	}
+
+    #submit {
+        left: 0;
+
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    #compass-wrapper{
+        #compass-text {
+            line-height: 170px;
+        }
+    }
+}
+
+html.touch {
+    #landing {
+        #replay {
+            display: none;
+        }
+    }
+
+    #compass-text {
+        display: none;
+    }
+
+    .game {
+        display: none;
+    }
+
+    #compass-wrapper {
+        &:hover {
+            #compass {
+                opacity: 1;
+            }
+        }
+    }
+}

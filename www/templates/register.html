@@ -1,0 +1,270 @@
+{% extends "templates/base_pane.html" %}
+{% block title %} HackIllinois &middot; Register {% endblock %}
+
+{% block pane_id %}registration-pane{% endblock %}
+{% block pane %}
+  <div id="icon-block" class="row">
+    <a href="/"><img id="logo" src="/assets/img/logo_gray.png"></a>
+  </div>
+  <div id="progress-block" class="table-row fill-parent">
+    <div id="general-icon" class="progress-container" data-related="general" data-related-weight="2">
+      <img class="progress-icon" src="/assets/img/tent-gray.png">
+      <img class="progress-icon active" src="/assets/img/tent-orange.png">
+      <span class="progress-caption">General</span>
+    </div>
+    <div id="general-personal-path" class="progress-path-container" data-related-weight="2">
+      <span class="path-icon">
+        <hr />
+      </span>
+    </div>
+    <div id="personal-icon" class="progress-container" data-related="personal" data-related-weight="3">
+      <img class="progress-icon" src="/assets/img/fire-gray.png">
+      <img class="progress-icon active" src="/assets/img/fire-orange.png">
+      <span class="progress-caption">Personal</span>
+    </div>
+    <div id="personal-professional-path" class="progress-path-container" data-related-weight="3">
+      <span class="path-icon">
+        <hr />
+      </span>
+    </div>
+    <div id="professional-icon" class="progress-container" data-related="professional" data-related-weight="4">
+      <img class="progress-icon" src="/assets/img/flashlight-gray.png">
+      <img class="progress-icon active" src="/assets/img/flashlight-orange.png">
+      <span class="progress-caption">Professional</span>
+    </div>
+    <div id="professional-hackathon-path" class="progress-path-container" data-related-weight="4">
+      <span class="path-icon">
+        <hr />
+      </span>
+    </div>
+    <div id="hackathon-icon" class="progress-container" data-related="hackathon">
+      <img class="progress-icon" src="/assets/img/map-gray.png">
+      <img class="progress-icon active" src="/assets/img/map-orange.png">
+      <span class="progress-caption">Hackathon</span>
+    </div>
+  </div>
+  <div id="animator">
+    <div id="title-block" class="row">
+      <h3 id="general-title" class="section-title" data-related="general">General Information</h3>
+      <h3 id="personal-title" class="section-title" data-related="personal">Personal Information</h3>
+      <h3 id="professional-title" class="section-title" data-related="professional">Professional Information</h3>
+      <h3 id="hackathon-title" class="section-title" data-related="hackathon">Hackathon Information</h3>
+    </div>
+    <div id="form-block" class="row">
+      <!-- General Information -->
+      <form id="general" class="active validatable" data-progress-weight="1">
+        <div class="row marginless">
+          <span class="caption-left">First Name</span>
+          <span class="caption-right">Last Name</span>
+        </div>
+        <div id="name" class="table-row fill-parent">
+          <input type="text" id="first-name" name="firstName" placeholder="First Name" value="{{ registrant.first_name if registrant }}" data-parsley-group="name">
+          <input type="text" id="last-name" name="lastName" placeholder="Last Name" value="{{ registrant.last_name if registrant }}" data-parsley-validate-if-empty data-parsley-group="name" data-parsley-join="name" data-parsley-errors-container="#name-errors">
+          <span id="name-errors" class="errors attached"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption-left">Age</span>
+          <span class="caption-right">Gender</span>
+        </div>
+        <div id="age-gender" class="table-row fill-parent">
+          <input type="text" id="age" name="age" placeholder="Age" value="{{ registration.age if registration else '' }}" data-parsley-validate-if-empty data-parsley-type="integer" data-parsley-max="100" data-parsley-min="13" data-parsley-type-message="Please enter a valid age"
+          data-parsley-max-message="Please enter a valid age" data-parsley-min-message="You must be at least 13 to participate in HackIllinois" data-parsley-group="age-gender" data-parsley-join="age-gender" data-parsley-errors-container="#age-gender-errors">
+          <input type="text" id="gender" name="gender" placeholder="Choose an Option" value="{{ registration.gender if registration else '' }}" data-parsley-group="age-gender">
+          <span id="age-gender-errors" class="errors attached"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">School</span>
+        </div>
+        <div class="row bordered">
+          <input type="text" id="school" name="school" placeholder="Choose an Option" data-selectize-value="{{ registration.school if registration else '' }}" data-parsley-required data-parsley-errors-container="#school-error">
+          <span id="school-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption-left">Major</span>
+          <span class="caption-right">Graduation Year</span>
+        </div>
+        <div id="schooling" class="table-row fill-parent">
+          <input type="text" id="major" name="major" placeholder="Choose an Option" data-selectize-value="{{ registration.major if registration else '' }}" data-parsley-validate-if-empty data-parsley-group="schooling" data-parsley-join="schooling" data-parsley-errors-container="#schooling-errors">
+          <input type="text" id="graduation-year" name="graduationYear" placeholder="Choose an Option" data-selectize-value="{{ registration.graduation_year if registration else '' }}" data-parsley-group="schooling">
+          <span id="schooling-errors" class="errors"></span>
+        </div>
+      </form>
+      <!-- Personal Information -->
+      <form id="personal" class="validatable" data-progress-weight="2">
+        <div class="row marginless">
+          <span class="caption">Diet</span>
+        </div>
+        <div class="row">
+          <input type="text" id="diet" name="diet" placeholder="Choose an Option" value="{{ registration.diet if registration else '' }}" data-parsley-required data-parsley-errors-container="#diet-error">
+          <span id="diet-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">Dietary Restrictions</span>
+        </div>
+        <div class="row bordered">
+          <input type="text" id="diet-restrictions" name="dietaryRestrictions" placeholder="Restrictions &amp; allergies (optional)" value="{{ registration.dietary_restrictions if (registration and registration.dietary_restrictions) else '' }}">
+        </div>
+        <div class="row marginless">
+          <span class="caption">Shirt Size</span>
+        </div>
+        <div class="table-row fill-parent">
+          <input type="text" id="shirt-size" name="shirtSize" placeholder="Choose an Option" value="{{ registrant.shirt_size if registration else '' }}" data-parsley-required data-parsley-errors-container="#shirt-size-error">
+          <span id="shirt-size-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">Phone Number</span>
+        </div>
+        <div class="row bordered">
+          <input type="text" id="contact-number" name="phoneNumber" placeholder="Contact number" value="{{ registrant.phone_number if registration else '' }}" data-parsley-required data-parsley-phone="#contact-number" data-parsley-errors-message="Please provide a valid phone number" data-parsley-errors-container="#contact-number-error">
+          <span id="contact-number-error" class="errors"></span>
+        </div>
+      </form>
+      <!-- Professional Information -->
+      <form id="professional" class="validatable" data-progress-weight="3">
+        <div id="resume" class="table-row fill-parent {{ 'uploaded' if registration else '' }}">
+          <input id="resume-file" type="file" name="resume" accept="application/pdf" {{ 'data-parsley-errors-messages-disabled data-parsley-required' if not registration else '' }} />
+          <button id="resume-upload">{{ 'Upload Resume (PDF)' if not registration else 'Update Resume (PDF)' }}</button>
+          <div id="resume-caption" class="row marginless">
+            <span class="caption">Resume</span>
+          </div>
+          <input type="text" id="resume-filename" class="joined-input" value="{{ registration.resume_filename if registration else '' }}" readonly />
+          <button id="resume-change" class="joined-button">Change</button>
+        </div>
+        <div class="row marginless">
+          <span class="caption">Which of the following types of positions interest you?</span>
+        </div>
+        <div id="job-seeking" class="table-row fill-parent">
+          <input type="text" id="professional-interest" name="professionalInterest" placeholder="Choose an Option" value="{{ registration.professional_interest if registration else '' }}" data-parsley-required data-parsley-errors-container="#professional-interest-error">
+          <span id="professional-interest-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">LinkedIn</span>
+        </div>
+        <div id="social-linkedin" class="row social bordered">
+          <input type="text" id="linkedin" name="linkedinUrl" placeholder="URL (optional)" value="{{ registration.linkedin_url if (registration and registration.linkedin_url) else '' }}" data-parsley-type="url" data-parsley-errors-container="#linkedin-error">
+          <span id="linkedin-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">GitHub</span>
+        </div>
+        <div id="social-github" class="row social bordered">
+          <input type="text" id="github" name="githubUrl" placeholder="URL (optional)" value="{{ registration.github_url if (registration and registration.github_url) else '' }}" data-parsley-type="url" data-parsley-errors-container="#github-error">
+          <span id="github-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">Personal Website</span>
+        </div>
+        <div id="social-personal-site" class="row social bordered">
+          <input type="text" id="personal-site" name="siteUrl" placeholder="URL (optional)" value="{{ registration.site_url if (registration and registration.site_url) else '' }}" data-parsley-type="url" data-parsley-errors-container="#personal-site-error">
+          <span id="personal-site-error" class="errors"></span>
+        </div>
+      </form>
+      <!-- Hackathon Information -->
+      <form id="hackathon-a" class="validatable" data-progress-weight="4">
+        <div class="row marginless">
+          <span class="caption">How many hackathons have you attended?</span>
+        </div>
+        <div class="table-row fill-parent">
+          <input id="hackathon-attendance" type="text" name="hackathonAttendance" placeholder="Choose an Option" value="{{ registration.hackathon_attendance if registration else '' }}" data-parsley-required data-parsley-errors-container="#hackathon-attendance-error">
+          <span id="hackathon-attendance-error" class="errors"></span>
+        </div>
+        <div class="row marginless">
+          <span class="caption">We are introducing three different initatives at HackIllinois. Choose the one(s) that interest you.</span>
+        </div>
+        <div id="hackathon-initiatives" class="table-row fill-parent">
+          <div class="row initiative">
+            <div class="square-option">
+              <input type="checkbox" id="software-initiative" name="initiatives[]" value="SOFTWARE" {{ "checked" if (registration and 'SOFTWARE' in registration.initiatives) else '' }} data-parsley-errors-messages-disabled data-parsley-class-handler="#hackathon-initiatives"
+              data-parsley-required>
+              <label for="software-initiative">
+                <span class="option"></span>
+              </label>
+            </div>
+            <div class="description">
+              <strong>Software</strong>
+              <br> We want you to make the coolest software-based project you can.
+            </div>
+          </div>
+          <div class="row initiative">
+            <div class="square-option">
+              <input type="checkbox" id="hardware-initiative" name="initiatives[]" value="HARDWARE" {{ "checked" if (registration and 'HARDWARE' in registration.initiatives) else '' }}>
+              <label for="hardware-initiative">
+                <span class="option"></span>
+              </label>
+            </div>
+            <div class="description">
+              <strong>Hardware</strong>
+              <br> We want to see the most ambitious hardware hacks ever.
+            </div>
+          </div>
+          <div class="row initiative">
+            <div class="square-option">
+              <input type="checkbox" id="open-source-initiative" name="initiatives[]" value="OPEN_SOURCE" {{ "checked" if (registration and 'OPEN_SOURCE' in registration.initiatives) else '' }}>
+              <label for="open-source-initiative">
+                <span class="option"></span>
+              </label>
+            </div>
+            <div class="description">
+              <strong>Open Source</strong>
+              <br> We want you to work with some great open source developers to make you favorite projects better. <a href="/#info" target="_blank">Learn more</a>.
+            </div>
+          </div>
+        </div>
+      </form>
+      <form id="hackathon-b" class="validatable" data-progress-weight="5">
+        <span class="caption">Provide your potential teammates' emails if you know them</span>
+        <div id="hackathon-team-members-followup" class="row">
+          <input id="team-members-followup" type="text" name="teamMemberEmails" placeholder="Provide up to 3 email addresses" value="{{ registration.team_member_emails|join(" , ") if (registration and registration.team_member_emails) else '' }}">
+        </div>
+        <div  id="hackathon-hardware-followup-caption" class="row marginless {{ '' if (registration and 'HARDWARE' in registration.initiatives) else 'hidden' }}">
+          <span class="caption">What type of hardware will you need?</span>
+        </div>
+        <div id="hackathon-hardware-followup" class="row {{ '' if (registration and 'HARDWARE' in registration.initiatives) else 'hidden' }}">
+          <input type="text" id="hardware-followup" name="hardwareDesired" placeholder="Explain here (optional)" value="{{ registration.hardware_desired if (registration and registration.hardware_desired) else '' }}">
+        </div>
+        <div id="hackathon-open-source-followup-caption" class="row marginless {{ '' if (registration and 'OPEN_SOURCE' in registration.initiatives) else 'hidden' }}">
+          <span class="caption">What type of open-source projects would you like to work on?</span>
+        </div>
+        <div id="hackathon-open-source-followup" class="row {{ '' if (registration and 'OPEN_SOURCE' in registration.initiatives) else 'hidden' }}">
+          <input type="text" id="open-source-followup" name="openSourceInterests" placeholder="Explain here (optional)" value="{{ registration.open_source_interests if (registration and registration.open_source_interests) else '' }}">
+        </div>
+        <div class="row marginless">
+          <span class="caption">Anything else you'd like to tell us?</span>
+        </div>
+        <div id="hackathon-extra-info" class="row">
+          <input type="text" id="extra-info" name="extraInformation" placeholder="Other information (optional)" value="{{ registration.extra_information if (registration and registration.extra_information) else '' }}">
+        </div>
+        <div class="row">
+          <div class="circular-option">
+            <input type="radio" id="terms-acceptance" name="terms" value="true" {{ 'checked' if registration else '' }} data-parsley-errors-messages-disabled data-parsley-required>
+            <label for="terms-acceptance">
+              <span class="option"></span>
+              <span class="label">I agree to the <a href="/rules" target="_blank">rules</a> of the Hackathon</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          {% if registrant.walk_in %}
+          <button id="finalize" class="{{ 'update' if registration else ''}}">{{ 'Save Changes' if registration else 'Submit' }}</button>
+          {% else %}
+          <button id="finalize-closed" class="{{ 'update' if registration else ''}}">{{ 'Save Changes' if registration else 'Submit' }}</button>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <hr>
+    <span id="nav-back" class="registration-nav">
+      <span class="chevron-left"></span>
+      Back
+    </span>
+    <span id="nav-next" class="registration-nav">
+      Next
+      <span class="chevron-right"></span>
+    </span>
+  </div>
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/register.min.js" /></script>
+{% endblock %}

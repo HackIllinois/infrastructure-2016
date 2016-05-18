@@ -1,0 +1,198 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; Day-of Info {% endblock %}
+{% block head_styles %}
+<link rel="stylesheet" href="/assets/css/external.min.css" />
+<style>
+    .bannerLayout {
+        position: absolute;
+        width: 100%;
+    }
+    #mainContent {
+  		box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  		background-color: white !important;
+  		padding: 25px;
+  		width: 75%;
+  		/* Set the margin-left and margin-right automatically set */
+		margin: 0 auto;
+	}
+
+	.nav{
+		border: none;
+	}
+
+	.h4-white{
+		color:white;
+	}
+
+	.background {
+		height: 100vh;
+	    width: 100%;
+	    left: 0px;
+	    top: 0px;
+	    right: 0px;
+	    bottom: 0px;
+	    position: fixed;
+	    background-image: url("./assets/img/home/bg@2x.png");
+	    background-size: cover;
+	    background-attachment: scroll;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    pointer-events: none;
+	}
+
+	.logo {
+		display: block;
+		width: 120px;
+		margin: 0 auto 50px;
+		margin-top: 30px;
+		max-width: 300px;
+		float: none;
+	}
+
+	#mainContent {
+		max-width: 960px;
+	}
+
+	.ui.inverted.green.segment {
+		background-color: #f2b48c !important;
+	}
+
+	.ui.inverted.red.segment {
+		background-color: #696984 !important;
+	}
+
+	.ui.secondary.pointing.menu a.item:hover {
+		border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+	}
+
+	.ui.inverted.attached.segment {
+		border: none !important;
+	}
+
+	.ui.inverted.attached.segment h5 {
+		font-size: 1.2em;
+	}
+
+	.ui.segment.attached {
+		color: rgba(0, 0, 0, 0.87);
+		font-size: 18px;
+	}
+
+	.ui.segment.attached a {
+		color: #4183c4;
+	}
+
+	.ui.segment.attached a:hover {
+		color: grey;
+	}
+
+	@media (max-width: 715px) {
+		#mainContent {
+			width: 90%;
+		}
+
+		.col-resp,
+		.ui.grid > [class*="eight wide"].column {
+			width: 100% !important;
+		}
+
+		.ui.secondary.pointing.menu a.item:hover {
+    		background-color: transparent;
+    		border-bottom-color: 2px solid rgba(34, 36, 38, 0.15);
+		}
+
+		.ui.secondary.pointing.menu {
+			border-bottom: none;
+			display: block;
+		}
+
+		.ui.secondary.pointing.menu .item {
+			float: left;
+	    	width: 50%;
+	    	border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+	    	border-left: 4px solid white;
+		}
+
+		nav a.item {
+			border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+			border-left: 4px solid white;
+		}
+	}
+</style>
+{% endblock %}
+{% block body %}
+
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+	<div id="content">
+		<a href="/dayof"><div class="logo"><img src="./assets/img/logo.png" class="logo"></div></a>
+		<div id="mainContent">
+		<div class="nav">
+		  <div class="ui secondary pointing menu">
+  			<a class="item" href="./dayof">
+			  Day of
+			</a>
+			<a class="item" href="./maps">
+			  Maps
+			</a>
+			<a class="item" href="https://mentor.hackillinois.org/dashboard">
+			  Schedule
+			</a>
+			<a class="item" href="./prizes">
+			  Prizes
+			</a>
+			<a class="item" href="./travel">
+			  Travel
+			</a>
+			<a class="item" href="./#info">
+			  FAQ
+			</a>
+		  </div>
+		</div>
+
+		<br/>
+
+		<div class="ui grid">
+			<div class="ui eight wide column col-resp">
+				<div class="ui segment top attached green inverted">
+					<h5 class="h4-white">Useful Links</h5>
+				</div>
+				<div class="ui segment bottom attached">
+					<ul style="padding-left: 20px;">
+						<li><a href="https://mentor.hackillinois.org">Mentorship Queue</a></li>
+						<li><a href="./api">API List</a></li>
+						<li><a href="./hardware">Hardware List</a></li>
+						<li><a href="https://github.com/hackillinois">Software Tools</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="ui eight wide column floated col-resp">
+				<div class="ui segment top attached red inverted">
+					<h5 class="h4-white">Contact Us</h5>
+				</div>
+				<div class="ui segment bottom attached">
+					<ul style="padding-left: 20px;">
+						<li>E-mail: <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a></li>
+						<li>Phone: 669-342-2545</li>
+					</ul>
+					Social Media
+					<ul style="padding-left: 20px; margin-top: 10px;">
+						<li><a href="https://www.facebook.com/hackillinois/">Facebook</a></li>
+						<li><a href="https://twitter.com/hackillinois">Twitter</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+	</div> <!-- end mainContent -->
+	</div>
+  </div>
+
+  {% endblock %} {% block body_scripts %}
+  <script src="/assets/js/external.min.js"></script>
+  {% endblock %}

@@ -1,0 +1,18 @@
+{
+  "name": "hackillinois",
+  "description": "Core infrastructure for HackIllinois 2016",
+  "version": "1.2.4",
+  "license": "Apache License, Version 2.0",
+  "dependencies": { },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-ruby-sass": "^2.0.5",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.0"
+  },
+  "private": true
+}

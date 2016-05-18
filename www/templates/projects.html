@@ -1,0 +1,714 @@
+{% extends "templates/base.html" %} {% block title %} HackIllinois &middot; Projects {% endblock %} {% block head_styles %}
+<link rel="stylesheet" href="/assets/css/external.min.css" />
+<style>
+  #wrapper {max-width: 960px;}
+
+  tr:nth-child(odd) td:hover {
+    background-color: #FEFEFE;
+    color: #333;
+  }
+
+  tr:nth-child(even) td:hover {
+    background-color: rgb(241, 241, 241);
+    color: #333;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  table{ width: 100%;}
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+  <div id="content">
+  <div id="wrapper">
+      <!-- Where you put the content of the website -->
+
+      <h1 class="text-header">OPEN SOURCE@HACKILLINOIS</h1>
+      <h3>More about Open Source@HackIllinois</h3>
+      <p>
+          We want hackers to be able to make meaningful addtions to the field of computer science and to organizations that depend on the technology that open source provides.
+          If you do accept working on Open Source, we ask that you be sure:
+          <ol>
+              <li>
+                  You are coming to Hackillinois
+              </li>
+              <li>
+                  You want to work on Open Source during the hackathon, knowing there are no prizes
+              </li>
+              <li>
+                  You won't drop Open Source during the hackathon, as you will be letting your team down
+              </li>
+          </ol>
+          We have assembled a varied set of Open Source Projects that hackers may work on.
+          <ul>
+              <li>
+                  If you have been accepted to Open Source@HackIllinois, let us know you preference.
+                  (Note: Not all of these projects necessarly will have a mentor day of based on the prefence of the mentor and the popularity of the project, If you select a project that won't have a mentor during the hackathon we will do our best to put you on a similar project, or you can work on the project without a mentor)
+              </li>
+              <br>
+              <li>
+                  If you have have not been accepted to Open Source@HackIllinois but still want to work on Open Source projects, we commend you and we would love for you to do that.
+                  Just know that you most likely will not have a mentor hacking with you, though you may still ask for support on the mentorship portal.
+                  Also let us know if you are doing so, if a mentor has the time we will direct them to work with you.
+
+              </li>
+          </ul>
+          You are free to join Open Source after the beginning of the hackathon, you may be added to a existing team or asked to hack with out a mentor (see above to learn how that works)
+      </p>
+
+      <h3>Projects you could be working on</h3>
+      <p>
+          Here is a list of project for which you might be able to hack with a developer on (You may work on projects not on this list but you may not have a mentor to hack with if so):
+      </p>
+      <div class="single-route-info top">
+          <h4 class="">Red Cross: Smoke Alarm Portal<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>The American Red Cross of Chicago and Northern Illinois (ARC-CNI) seeks to improve smoke alarm installation rates in the Red Cross North Central Division, which is comprised of 10 regions. This software is a lightweight web portal for receiving and routing smoke alarm installation requests.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Javascript, Node.js</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kfogel">Karl Fogel</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/redcross/smoke-alarm-portal/issues">https://github.com/redcross/smoke-alarm-portal/issues</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Red Cross: DCSOps<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>DCSOps is a fully open-source volunteer coordination platform deployed by the Red Cross. It has a number of open enhancement requests and issues; .</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Rails</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kfogel">Karl Fogel</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/redcross/arcdata/issues">https://github.com/redcross/arcdata/issues</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">HTBox AllReady<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Humanitarian Toolbox "AllReady" app is an open source disaster preparedness system. The prototype was first developed by Microsoft in a sprint, then taken over by Humanitarian Toolbox. It has a number of outstanding issues and enhancement requests.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Visual Studio, .NET</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kfogel">Karl Fogel</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="http://www.htbox.org/projects/allready">http://www.htbox.org/projects/allready</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">WorldWide Telescope<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>WorldWide Telescope (WWT) is a "virtual telescope" that assembles imagery and other data from many space-based and Earth-based telescopes and stitches it all together to create an interactive telescope in software. There are many open issues and enhancements, for both the Windows native client version of WWT and the web-based HTML5 version.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Visual Studio, .NET, Javasript, HTML5</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kfogel">Karl Fogel</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/WorldWideTelescope/wwt-web-client">https://github.com/WorldWideTelescope/wwt-web-client</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Bro: Network Log Visualization<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>As network speeds keep increasing, and more and more devices are connected to the Internet, network logs are quickly becoming "Big Data." Some sites that use Bro generate over 1 billion log lines per day. Network security teams need help in processing this massive amount of data. I'd like to mentor a project that takes Bro log data (CSV files) and processes them to create real-time (or near-real-time) visualizations that can be used to identify malicious or compromised hosts.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Data processing, Visualization, Java, Docker</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/grigorescu">Vlad Grigorescu</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/bro">https://github.com/bro</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Bro: Google Safe Browsing<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>With the Google Safe Browsing API, you can query URLs to detect and alert on malicious or phishing sites. By adding this to the Bro Network Security Monitor, you would gain alerts and protection for all users on a network.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>C++</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/grigorescu">Vlad Grigorescu</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/bro">https://github.com/bro</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Bro: Script Repo and Plugin<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>The Bro Network Security Monitor relies on scripts for advanced functionality. The Bro script repository would be a project similar to CPAN or PyPy, with a Bro Control plugin for downloading, installing, updating and removing scripts (+ any dependencies)</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Python, Git</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/grigorescu">Vlad Grigorescu</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/bro">https://github.com/bro</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache HTTPd: Dervitive for IoT<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Apache Web Server is widely deployed across all modern operating systems. It may also interesting for students to build a minimal deployment of httpd suitable for embedded controllers/IoT devices.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>C, Unix</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/wrowe">William A. Rowe Jr.</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/httpd">https://github.com/apache/httpd</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">OSI: [Insert Your Idea Here]<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Project to be determined by the participating team. Team would need to identify the purpose of their component or project, determine the appropriate OSI license to achieve their goal (adoption/permissive vs code freedom/copyleft), determine the organization/umbrella best suited to host the project, create the initial spec and draft implementation on github and bring their proposal the project to that community or incubator. Team members should expect to choose functionality of their own longer-term interest and to pursue their project idea beyond the initial hackathon duration.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>[For Hackers to Decide]</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/wrowe">William A. Rowe Jr.</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://opensource.org/">https://opensource.org/</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">CoinSorter: Coin grading and Counterfeit Detection<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Over the years there have been small changes in the same designs of coins. For example the spacing of “AM” in AMERICA is different on the back of US Lincoln pennies after 1992. Having a large database of coin images, front and back, and knowing their date and mint mark one could correlate regions on both sides of the coin. Most of these will be meaningless, but some correlations of regions will be quite interesting. Using the existing CoinSorter system one will be able to detect rare verities and counterfeit coins already known and quite possibly ones that are unknown. </td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Deep Learning, CUDA, Computer Vision, Hardware Development, Mechatronics</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/pkrush">Paul Krush</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/GemHunt/CoinSorter">https://github.com/GemHunt/CoinSorter/</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">CoinSorter: Metering, Spacing, and Classification of Coins<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Currently CoinSorter only handles one size of coin at time with an off the shelf coin hopper. One should be able to handle mixed coin sizes with a series of independently driven conveyors controlled with an Arduino. Handling mixed coin sizes would make the system much more useful. For example it could find rare coins while doing the simple act of sorting and counting mixed change. This might involve some mechanical changes to conveyor belt guides and fingers or some electronic changes such as adding IR or eddy current sensors.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Arduino, OpenCV, C++, Python, SQL, image processing, machine learning, Caffe, convolutional neural networks, basic mechanical/robotics design</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/pkrush">Paul Krush</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/GemHunt/CoinSorter">https://github.com/GemHunt/CoinSorter/</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">CoinSorter: Port to Android<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Currently a Windows PC classifies Caffe models and sends commands to control Arduino based conveyors and solenoids for sorting coins. An Android based system would great option to reduce the cost, size and complexity of the system. </td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Android, Arduino, OpenCV, C++, Python, SQL, image processing, Machine Learning, Caffe, Convolutional Neural Networks</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/pkrush">Paul Krush</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/GemHunt/CoinSorter">https://github.com/GemHunt/CoinSorter</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Yelp: PaaSTA<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>PaaSTA is a highly-available, distributed system for building, deploying, and running services using containers and Apache Mesos!</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Docker, Mesos, Marathon, Chronos, SmartStack, Jenkins, Sensu</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/nhandler">Nathan Handler</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/Yelp/paasta">https://github.com/Yelp/paasta</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br/>
+      <div class="single-route-info top">
+          <h4 class="">IllinoisWCS: Library Tracker<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>The goal is to create a useful library tracker web app for both members and officers. Members should be able to view available books online and request new materials. Officers should be able to be able to have an admin page where they can check in and out copies of books, see the status of the library overall with analytics, and have useful features such as click-to-email students with overdue books. Ideally we can connect to a database but also to APIs to pull down book information from the web for auto-fill. </td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Django</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/nhandler">Nathan Handler</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/IllinoisWCS/LibraryTracker">https://github.com/IllinoisWCS/LibraryTracker</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br/>
+      <div class="single-route-info top">
+          <h4 class="">NodeSchool Qik<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>A combination of gulp-begin (a quick start build script for full-stack Node.js websites), Fritz (a Django-inspired back-end interface for Node.js that provides database schema creation and manipulation through a model system), and gulp-ng-svg (a templating system that provides drop-in inline SVGs as a build task and replace icon fonts and image sprites). All three of these would be brought together in a project called Qik that interactively sets up a platform for constructing websites.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Node.js, SQL, ORM</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/BrainBacon">Brian Jesse</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href=""></a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Nodep<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>See nodep.org. Nodep is a dependency injection system for Node.js. I would want to work with the team to come up with new robust features, strong tests, and possible use-cases.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Node.js, IoC</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/BrainBacon">Brian Jesse</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://nodep.org">https://nodep.org</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">AnyChat<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>A modern group chat for all of your friends and friends to be. AnyChat allows you to chat with random local people in the comfort of a group, without the awkwardness of trying to talk one on one. AnyChat gives you the ability to meet people around you with common interests and talk about enything.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Python, Django</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/Rsgm">Ryan Mirman</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/Rsgm/wyvern">https://github.com/Rsgm/wyvern</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">AgentPy<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>An agent based simulation framework for python that can be easily accessible through a GUI and provides support for production of simulated data.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Python, C, Simulation</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/MikeTam1021">Mike Tamillow</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Sysdig Lock Analysis Tooling<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Sysdig is a tool for doing system-wide syscall tracing with minimal performance impact, making it useful for production systems. Right now, it correctly decodes some locking-related calls, but doesn't collect initial FD lock state and doesn't have any chisels or views for quickly finding places in a system where processes are blocked waiting for locks.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>C (Kernel), Lua</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/charles-dyfis-net">Charles Duffy</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache Storm: Federated Storm UI<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>The storm UI currently supports single storm cluster. Having federated UI might be very useful for users with multiple topologies/resources on multiple clusters. Ability to deep drive into supervisor might also help.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, Clojure </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kishorvpatil">Kishorkumar Patil</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/storm">https://github.com/apache/storm</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache Storm: Performance Booster<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>By batching acks flowing through storm topology can optimized the number of messages as a performance booster</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, Clojure </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kishorvpatil">Kishorkumar Patil</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/storm">https://github.com/apache/storm</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache Storm: Simplified/Unified Metrics API<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Storm could benefit using new simple API ( such as codahale library to provide better ability to register and report metrics) to Ganglia like reporting/aggregation system </td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, Clojure, Codahale/Ganglia </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/kishorvpatil">Kishorkumar Patil</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/storm">https://github.com/apache/storm</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache Airavata Allocation Manager<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Apache Airavata is software for building science gateways--user environments that help scientists make the best use of supercomputers to solve challenging problems. Airavata follows a microservices architecture. A key missing component in Apache Airavata today is to give science gateway administrators the ability to assign and manage allocations to their users to make sure that a few users don’t use up the gateway’s entire supercomputing allocation.  Students who participate in this activity will develop a new Apache Airavata component that will include a database backend, middleware, and an API for the component. The students will also develop form-based submission and approval process that will prospective gateway scientists will use when applying to use a science gateway. Apache Airavata has mentored over 20 Google Summer of Code students since 2013 and is looking for more students in 2016.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, C++, Python </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="http://people.apache.org/~smarru/">Suresh Marru</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://issues.apache.org/jira/browse/AIRAVATA-1893">https://issues.apache.org/jira/browse/AIRAVATA-1893</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="single-route-info top">
+          <h4 class="">Apache Airavata Web-based Workflow Editor<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Apache Airavata is software for building science gateways--user environments that help scientists make the best use of supercomputers to solve challenging problems. Airavata follows a microservices architecture. This project involves the implementation of a scientific workflow editor user interface for Apache Airavata. Scientific workflows allow scientists to couple two or more applications, perhaps running on supercomputers across the world, into a single composite application.  Apache Airavata manages the executions of these workflows and uses  JSON to describe a specific workflow. The challenge will be to develop a JSON editor that is integrated with other Airavata components. Apache Airavata has mentored over 20 Google Summer of Code students since 2013 and is looking for more students in 2016.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, C++, Python </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="http://people.apache.org/~scnakandala/">Supun Nakandala</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://issues.apache.org/jira/browse/AIRAVATA-1894">https://issues.apache.org/jira/browse/AIRAVATA-1894</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <br>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache Bigtop<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Bigtop is an Apache Foundation project for Infrastructure Engineers and Data Scientists looking for comprehensive packaging, testing, and configuration of the leading open source big data components. Bigtop supports a wide range of components/projects, including, but not limited to, Hadoop, HBase and Spark. It would be cool to add BOSH as a "packaging" format to what Bigtop supports.  </td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, Docker </td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="http://github.com/rvs">Roman Shaposhnik</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/bigtop">https://github.com/apache/bigtop</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="single-route-info top">
+          <h4 class="">Apache - Apache Eagle<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td>Given that many metrics/logs in an organization needs to be computed or correlated for finding anomaly(M metrics * N computes), use metadata to onboard metric compute and metric join without any programming and metric compute/join are distributed across storm cluster.</td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java, Apache Storm, Apache Kafka</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td><a target="_blank" href="https://github.com/yonzhang">Yong Zhang</a></td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="https://github.com/apache/bigtop">https://github.com/apache/bigtop</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="single-route-info top">
+          <h4 class="">Implementing HTrace in the Nutch Web Crawler<i class="down ui sharp  icon"> <img style="height:25px;" src="assets/img/down.png"/></i></h4>
+          <table class="">
+              <tbody>
+                  <tr>
+                      <td>Description:</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td>Technologies:</td>
+                      <td>Java</td>
+                  </tr>
+                  <tr>
+                      <td>Mentor:</td>
+                      <td>Lewis John McGibbney</td>
+                  </tr>
+                  <tr>
+                      <td>Useful Documentation:</td>
+                      <td><a target="_blank" href="http://nutch.apache.org/">http://nutch.apache.org/</a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <h3>Questions?</h3>
+      <p>Shoot us an email at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a> for any questions!</p>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block body_scripts %}
+<script src="/assets/js/external.min.js"></script>
+{% endblock %}

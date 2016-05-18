@@ -1,0 +1,122 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}User Management &middot; View{% endblock %}
+{% block body %}
+
+{% set subject = data.subject %}
+{% set descendant = subject.descendant %}
+{% set is_volunteerable = subject.role in ['HACKER', 'VOLUNTEER'] %}
+{% set is_internal = subject.role in ['ADMINISTRATOR', 'STAFF', 'VOLUNTEER']%}
+
+<h2>{{ descendant.first_name }} {{ descendant.last_name }}</h2>
+
+<div class="row">
+  <div class="col-sm-{{ '4' if is_volunteerable else '6' }} text-center">
+    <h3>T-Shirt ({{ descendant.shirt_size if descendant.shirt_size else 'No Size'}})</h3>
+    <div class="checkbox">
+      <label>
+        <input id="shirtCollected" type="checkbox" {{ 'checked disabled' if descendant.shirt_collected else '' }}> Item collected
+      </label>
+    </div>
+  </div>
+  <div class="col-sm-{{ '4' if is_volunteerable else '6' }} text-center">
+    <h3>Swag</h3>
+    <div class="checkbox">
+      <label>
+        <input id="swagCollected" type="checkbox" {{ 'checked disabled' if descendant.swag_collected else '' }}> Item collected
+      </label>
+    </div>
+  </div>
+{% if is_volunteerable %}
+  <div class="col-sm-4 text-center">
+    <h3>Volunteering</h3>
+    <div class="checkbox">
+      <label>
+        <input id="isVolunteering" type="checkbox" {{ 'checked disabled' if descendant.is_volunteering else '' }}> Volunteered
+      </label>
+    </div>
+  </div>
+{% endif %}
+</div>
+
+<div class="row top-buffer">
+  <div class="col-sm-12">
+    <h3>Hardware</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+        <form id="hardware-checkout">
+          <label for="hardwareCheckoutId">Checkout</label>
+          <div class="input-group">
+            <input type="text" class="form-control" class="form-control" id="hardwareCheckoutId" name="id" placeholder="Scan a barcode" autocomplete="off" autofocus data-parsley-required data-parsley-type="number">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default pull-right">Checkout</button>
+            </span>
+          </div>
+        </form>
+        <form id="hardware-return" class="top-buffer">
+          <label for="hardwareReturnId">Return</label>
+          <div class="input-group">
+            <input type="text" class="form-control" class="form-control" id="hardwareReturnId" name="id" placeholder="Scan a barcode" autocomplete="off" autofocus data-parsley-required data-parsley-type="number">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default pull-right">Return</button>
+            </span>
+          </div>
+        </form>
+  </div>
+    <div class="col-sm-6">
+      <table id="hardwareTable">
+      </table>
+    </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-sm-12">
+    <h3>Meals</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      Diet: {{ descendant.registration.diet|capitalize|replace('_', ' ') if descendant.registration else 'None' }} <br />
+      Dietary restrictions: {{ descendant.registration.dietary_restrictions if descendant.registration else 'None' }}
+    </p>
+  </div>
+  <div class="col-sm-6">
+    <div id="meals" class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a id="breakfast" type="button" class="btn btn-default hidden" value="BREAKFAST">Add Breakfast</a>
+      <a id="lunch" type="button" class="btn btn-default hidden" value="LUNCH">Add Lunch</a>
+      <a id="dinner" type="button" class="btn btn-default hidden" value="DINNER">Add Dinner</a>
+      <a id="snack" type="button" class="btn btn-default hidden" value="SNACK">Add Snack</a>
+      <a id="mini-meal" type="button" class="btn btn-default hidden" value="MINI_MEAL">Add Mini-Meal</a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table id="mealsTable" class="table">
+      <tr>
+        <th>Meal</th>
+        <th>Timestamp</th>
+      </tr>
+      {% for meal in descendant.meals %}
+      <tr>
+        <td>{{meal.identity|capitalize|replace('_',' ')}}</td>
+        <td data-timestamp="{{meal.created|epoch_milliseconds}}"></td>
+      </tr>
+      {% endfor %}
+      {% if not descendant.meals %}
+      <tr>
+        <td>No meals</td>
+        <td></td>
+      </tr>
+      {% endif %}
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_scripts %}
+<script src="/assets/js/admin_user_details.min.js"></script>
+{% endblock %}

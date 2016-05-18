@@ -1,0 +1,893 @@
+{% extends "templates/base.html" %}
+{% block title %}
+  HackIllinois &middot; Explore New Frontiers
+{% endblock %}
+
+{% block body_tag %}
+  <body id="home" class="home">
+{% endblock %}
+{% block body %}
+	<div class="background"></div>
+	<div class="desk-container">
+		<div class="desk">
+			<div class="content">
+				<div class="main">
+					<div class="header-unit">
+						<a class="logo-container" href=".."><img class="logo" src="/assets/img/logo.png"></a>
+						<h1 class="tagline">Explore new frontiers</h1>
+						<h2 class="date">February 19-21, 2016</h2>
+            {# hidden from view #}
+				{# <a class="btn-apply" href="/register">Apply</a> #}
+				{# <a class="btn-login" href="/authenticate">Log In</a> #}
+                  <a class="btn-login" href="/dayof">Day-Of Info</a>
+
+					</div>
+					<div id="info" class="binder-unit">
+						<a href="..#info"><div class="binder-envelope"></div></a>
+						<div class="binder-cover shadow">
+							<div class="divider"></div>
+							<div class="mobile-nav">
+								<nav class="horiz-scroll">
+									<ul class="binder-tabs">
+										<li class="tab tab-active" data-content="about"><a href="#0">About</a></li>
+										<li class="tab" data-content="team"><a href="#0">Team</a></li>
+										<li class="tab" data-content="rules"><a href="#0">Rules &amp; Conduct</a></li>
+										<li class="tab" data-content="faq-before"><a href="#0">FAQ: Before</a></li>
+										<li class="tab" data-content="faq-during"><a href="#0">FAQ: During</a></li>
+										<li class="tab" data-content="faq-after"><a href="#0">FAQ: After</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="binder-content">
+								<ul class="binder-tabs">
+									<div class="tabs-left">
+										<li data-content="about"><a class="tab-content tab-light tab-active" href="#">About</a></li>
+										<li data-content="team"><a class="tab-content tab-dark" href="#">Team</a></li>
+										<li data-content="rules"><a class="tab-content tab-dark" href="#">Rules &amp; Conduct</a></li>
+									</div>
+									<div class="tabs-right">
+										<li><span class="tab-content tab-faq tab-extra-dark" href="#">FAQ</span></li>
+										<li data-content="faq-before"><a class="tab-content tab-light" href="#">Before</a></li>
+										<li data-content="faq-during"><a class="tab-content tab-light-dark" href="#">During</a></li>
+										<li data-content="faq-after"><a class="tab-content tab-dark" href="#">After</a></li>
+									</div>
+								</ul>
+								<div class="binder-paper">
+									<div class="pages">
+										<div class="page-content content-visible" data-content="about">
+											<div class="page-left">
+												<h1>Welcome to HackIllinois!</h1>
+												<p>From its inception, HackIllinois has ventured out into the unknown on a mission to build an exceptional and creative hacking culture. This starts with fostering an environment of innovation and impact.</p>
+
+												<h2>Our beliefs</h2>
+												<p>At HackIllinois, we believe in three core values:
+													<ul class="arrow-bullets">
+														<li><span class="text-resize">Encouraging students to explore their creativity</span></li>
+														<li><span class="text-resize">Empowering students to create meaningful additions to the field of technology</span></li>
+														<li><span class="text-resize">Building a community of peers and mentors</span></li>
+													</ul>
+												</p>
+											</div>
+											<div class="inset-fade-top"></div>
+											<div class="page-right overflow-scroll">
+												<h1>Our Event</h1>
+												<p>In the span of 36 hours, our hackers are challenged to innovate, design and achieve.</p>
+												<p>To do so, we are focusing on building HackIllinois as an exciting, non-traditional experience for students. This year, we are introducing three initiatives of HackIllinois:</p>
+												<ul class="inline-images">
+													<li>
+														<img class="badge-software" src="/assets/img/home/badge-01.png">
+														<br>
+														<strong>Software</strong>
+													</li>
+													<li>
+														<img class="badge-hardware" src="/assets/img/home/badge-02.png">
+														<br>
+														<strong>Hardware</strong></li>
+													<li>
+														<img class="badge-opensource" src="/assets/img/home/badge-03.png">
+														<br>
+														<strong>Open Source</strong>
+													</li>
+													<div style="clear: both;"></div>
+												</ul>
+
+												<ul class="arrow-bullets">
+													<li><span class="text-resize">Software@HackIllinois equips students with the tools, mentors and APIs they need to develop creative mobile and web applications.</span></li>
+													<li><span class="text-resize">Hardware@HackIllinois helps both beginner and experienced hackers create a new generation of hardware technology.</span></li>
+													<li><span class="text-resize">OpenSource@HackIllinois is a brand new hackathon format that brings together open source gurus (like Jay Freeman aka Saurik) and hackers to build on projects and give back to the developer community.</span></li>
+												</ul>
+
+												<p>At any time during the event, hackers are permitted to switch between the three initiatives.</p>
+
+												<p>Note that, to maintain the ultimate goal of encouraging growth and development in the Open Source community, OpenSource@HackIllinois will not be supplemented by a monetary prize.</p>
+
+												<p>Information about the judging criteria and process can be found <a href="/judging" target="_blank">here</a>.</p>
+
+												<div class="fade"></div>
+											</div>
+											<div class="inset-fade-bottom"></div>
+											<div class="pagination">
+												<div class="left">
+												</div>
+												<div class="right">
+													<a class="pagination-link" data-content="team" href="#">Team</a>
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+										<div class="page-content" data-content="team">
+											<div class="page-left padding-top-50">
+												<img class="team-photo" src="/assets/img/home/team.jpg">
+											</div>
+											<div class="page-right padding-top-100">
+												<h1>Meet our team</h1>
+												<p>We’re a team of driven individuals working towards the goal of inspiring and empowering creative minds to build anything they can imagine.</p>
+												<h1>Our motto</h1>
+												<p>Explore New Frontiers at HackIllinois</p>
+
+												<div class="fade"></div>
+											</div>
+											<div class="pagination">
+												<div class="left">
+													<a class="pagination-link" data-content="about" href="#">About</a>
+												</div>
+												<div class="right">
+													<a class="pagination-link" data-content="rules" href="#">Rules & Conduct</a>
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+										<div class="page-content" data-content="rules">
+											<div class="inset-fade-top-left"></div>
+											<div class="page-left overflow-scroll">
+												<h1>In a Nutshell</h1>
+												<p>Use common sense, and listen to HackIllinois staff. <a href="mailto:contact@hackillinois.org">Let us know</a> if you have any questions!</p>
+
+												<h1>General</h1>
+												<p>Rules are subject to change at any time without notice. Decisions by the HackIllinois team are final.</p>
+
+												<h1>Participation</h1>
+												<p>All participants must be full-time or part-time University students during Spring 2016 except where permission is explicitly given. Participation is closed to family members of judges. Upon participation in this event, it is implied that we reserve the right to share your resume and other application material with our corporate sponsors. By attending HackIllinois, you acknowledge that your picture and video may be used without compensation, prior permission, or notification in any promotional material related to HackIllinois.</p>
+
+												<h1>Teams</h1>
+												<p>Teams must consist of between 1 and 4 participants. Teams must submit a list of members upon submitting their hack by Sunday February 21st, 2016  at 10:00 am. Any modifications after that must be approved by organizers. You can, by all means go solo, but we encourage you to work in groups!</p>
+
+												<h1>Submissions</h1>
+												<p>Each team is permitted one submission that must be received by 10:00am on Sunday, February 21st, 2016. Code submitted for judging must be produced only by team members and written during HackIllinois from the starting time on Friday, February 19th, 2016 to the submission time. If you are continuing a previous project or using old code written by you, let us know on the project submission form. Third party libraries are allowed without notice provided that they are publicly available to any participant. All code you create at HackIllinois is owned by you, and may be made open source at your discretion. By submitting a project, you and your team grant the HackIllinois team the unrestricted right to use your submission material, at no cost, for promotional purposes of future HackIllinois events.</p>
+
+												<h1>Judging Criteria</h1>
+												<p>Teams will be judged based on different <a href="http://hackillinois.org/judging">criteria</a>. Teams will not be told their scores, and all decisions made by the judges and HackIllinois team are final.</p>
+
+												<h1>Project Fair</h1>
+												<p>At the end of the event, teams will showcase their projects in a project fair. During this time period, judges will proceed to all teams, and a team will have two to three minutes to demo their projects in a project fair. A team’s presentation may be interrupted by a judge at any time. Teams must be ready to demo when the judges reach their table, and passing on a judge relinquishes the right to be judged. Corporate prizes are judged directly by the company, and HackIllinois is not responsible for the criteria used by these companies.</p>
+
+												<h1>Winners</h1>
+												<p>Winners for general HackIllinois prizes will be selected by a combination of corporate judges and judges provided by HackIllinois. Each winning team will be responsible for working with the University of Illinois Computer Science department to arrange for the payment to be sent. Corporate prizes are judged by the respective company, and are provided directly from a company to the winning team. The winning team is responsible for all taxes associated with a prize.</p>
+
+											</div>
+											<div class="inset-fade-bottom-left"></div>
+
+											<div class="inset-fade-top"></div>
+											<div class="page-right overflow-scroll">
+
+												<h1>Conduct</h1>
+												<p>HackIllinois is dedicated to providing a harassment-free event experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, nationality, or religion. We do not tolerate harassment of event participants in any form. Sexual language and imagery is not appropriate for any event venue, including talks.</p>
+												<p>Event participants violating these rules may be sanctioned or expelled from the event at the discretion of the event organizers. Harassment includes offensive verbal comments, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.</p>
+												<p>Participants asked to stop any harassing behavior are expected to comply immediately. Sponsoring organizations and their representatives are also subject to the anti-harassment policy. In particular, exhibitors should not use sexualized images, activities, or other material. Event staff (including volunteers) should not use sexualized clothing/uniforms/costumes, or otherwise create a sexualized environment.</p>
+												<p>If a participant engages in harassing behavior, the event organizers may take any action they deem appropriate, including warning the offender or expulsion from the event. If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of event staff immediately.</p>
+
+											</div>
+											<div class="inset-fade-bottom"></div>
+											<div class="pagination">
+												<div class="left">
+													<a class="pagination-link" data-content="team" href="#">Team</a>
+												</div>
+												<div class="right">
+													<a class="pagination-link" data-content="faq-before" href="#">FAQ: Before</a>
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+
+										<div class="page-content" data-content="faq-before">
+											<div class="page-left">
+												<h1>What should I bring?</h1>
+												<p>You should bring a student ID, a change of clothing or two, personal items (toiletries), a laptop &amp; charger, and any required hardware for your hack. Essentially, bring anything you would need for a normal weekend. Due to power concerns, please do not bring extra monitors or desktop computers.</p>
+
+												<h1>How do I get there?</h1>
+												<p>Check out travel details at <a href="https://hackillinois.org/travel">hackillinois.org/travel</a></p>
+
+											</div>
+											<div class="page-right">
+												<h1>How can my school get a bus?</h1>
+												<p>Send us an email at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a> and get your peers to sign up! Buses will be provided to schools with a large number of participants, and hacking is more fun with friends!</p>
+
+												<h1>Do I need a team?</h1>
+												<p>Single person teams are allowed, but we encourage you to work in a group! Teams can have up to four people spanning any schools.</p>
+
+											</div>
+											<div class="pagination">
+												<div class="left">
+													<a class="pagination-link" data-content="rules" href="#">Rules & Conduct</a>
+												</div>
+												<div class="right">
+													<a class="pagination-link" data-content="faq-during" href="#">FAQ: During</a>
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+										<div class="page-content" data-content="faq-during">
+											<div class="page-left">
+												<h1>Will there be food?</h1>
+												<p>All meals, snacks, and drinks will be provided for the entire weekend. If you have a dietary restriction, please make sure to mention it on the application. There will be a wide variety of food.</p>
+
+												<h1>Who do I contact for help?</h1>
+												<p>Mentors from leading technology companies will be on-hand to provide support and troubleshoot problems. We also encourage all hackers to help each other!</p>
+
+											</div>
+											<div class="page-right">
+												<h1>Where do I sleep?</h1>
+												<p>Sleeping rooms will be furnished with air mattresses and pillows. We want you to be comfortable!</p>
+
+												<h1>Will you have hardware?</h1>
+												<p>We'll have high-level hardware like Oculus Rift, the Myo armband, and Microsoft Kinect for hardware hackers. We'll also have basic hardware components like resisitors, transistors, and ICs, as well as wood, building materials, and power tools for you to tinker with. To help gauge interest, please specify any hardware that you might use in your application. For the full list of hardware, please see <a href="https://hackillinois.org/hardware">hackillinois.org/hardware</a></p>
+											</div>
+											<div class="pagination">
+												<div class="left">
+													<a class="pagination-link" data-content="faq-before" href="#">FAQ: Before</a>
+												</div>
+												<div class="right">
+													<a class="pagination-link" data-content="faq-after" href="#">FAQ: After</a>
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+										<div class="page-content" data-content="faq-after">
+											<div class="page-left">
+												<h1>What are the prizes?</h1>
+												<p>Details about prizes can be found at <a href="https://www.hackillinois.org/prizes">hackillinois.org/prizes</a></p>
+
+												<h1>How's judging work?</h1>
+												<p>HackIllinois judging will be split into three categories: Software, Hardware, and Open Source. For information, check out the <a href="/judging" target="_blank">Judging Info Sheet</a>. Our VIP judges include Pek Pongpaet from Impekable, Tasos Karahalios from IDEO, Chrissy Ziccarelli from Girls Who Code, Jed Taylor from the Technology Entrepreneurship Center at Illinois and a top executive from IMO. There will be prizes provided directly by HackIllinois and by our sponsors.</p>
+											</div>
+											<div class="page-right overflow-scroll">
+												<h1>More questions?</h1>
+												<p>Please don't hesitate to reach out to us at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a>!</p>
+											</div>
+											<div class="pagination">
+												<div class="left">
+													<a class="pagination-link" data-content="faq-during" href="#">FAQ: During</a>
+												</div>
+												<div class="right">
+
+												</div>
+												<div style="clear: both;"></div>
+											</div>
+										</div>
+
+										<div class="divider"></div>
+									</div>
+									<div style="clear:both;"></div>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div style="width:100%;height:150px;"></div>
+
+					<div id="schedule" class="agenda-unit">
+						<div class="agenda-content">
+							<div class="agenda-heading">
+								<h2>Expedition Itinerary</h2>
+							</div>
+							<div class="column first">
+								<div class="column-heading">
+									<h3>Friday</h3>
+									<h4>February 19</h4>
+								</div>
+								<ul class="agenda-details">
+									<li class="item">
+										<div class="time red">4:00pm</div>
+										<div class="description">
+											<div class="heading">Buses arrive/Check-in</div>
+											<div class="location">Siebel Atrium</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">5:00pm</div>
+										<div class="description">
+											<div class="heading">Career Fair</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time red">7:00pm</div>
+										<div class="description">
+											<div class="heading">Opening Ceremony</div>
+											<div class="location">Illini Union</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">8:30pm</div>
+										<div class="description">
+											<div class="heading">Dinner</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">9:15pm</div>
+										<div class="description">
+											<div class="heading">OS Team Forming</div>
+											<div class="location">1015, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">9:15pm</div>
+										<div class="description">
+											<div class="heading">Hardware/Software Team Forming</div>
+											<div class="location">4404, Siebel Center</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time red">10:00pm</div>
+										<div class="description">
+											<div class="heading">Hacking Begins</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time hide">10:00pm</div>
+										<div class="description">
+											<div class="heading">Resources 101</div>
+											<div class="location">1404, Siebel Center</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">10:30pm</div>
+										<div class="description">
+											<div class="heading">Microsoft Tech Talk</div>
+											<div class="location">Grainger Auditorium</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">11:30pm</div>
+										<div class="description">
+											<div class="heading">DevOps Workshop</div>
+											<div class="location">1404, Siebel Center</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time hide">11:30pm</div>
+										<div class="description">
+											<div class="heading">Arduino Workshop</div>
+											<div class="location">2013, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="column second">
+								<div class="column-heading">
+									<h3>Saturday</h3>
+									<h4>February 20</h4>
+								</div>
+								<ul class="agenda-details">
+									<li class="item">
+										<div class="time">12:30am</div>
+										<div class="description">
+											<div class="heading">Midnight Snack</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">1:00am</div>
+										<div class="description">
+											<div class="heading">Web Dev & API Workshop</div>
+											<div class="location">2013, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time hide">1:00am</div>
+										<div class="description">
+											<div class="heading">Raspberry Pi Workshop</div>
+											<div class="location">1404, Siebel Center</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">8:00am</div>
+										<div class="description">
+											<div class="heading">Breakfast</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">10:00am</div>
+										<div class="description">
+											<div class="heading">Therapy Dogs</div>
+											<div class="location">ECEB Atrium</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time hide">10:00am</div>
+										<div class="description">
+											<div class="heading">Circuit Design Workshop</div>
+											<div class="location">2013, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">11:00am</div>
+										<div class="description">
+											<div class="heading">Makerlab Tech Talk</div>
+											<div class="location">Grainger Auditorium, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">12:00pm</div>
+										<div class="description">
+											<div class="heading">Lunch</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">1:00pm</div>
+										<div class="description">
+											<div class="heading">Blue Waters Tours</div>
+											<div class="location">Blue Waters</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">3:00pm</div>
+										<div class="description">
+											<div class="heading">Pek Pongpaet's Talk</div>
+											<div class="location">Grainger Auditorium, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">4:00pm</div>
+										<div class="description">
+											<div class="heading">Chrissy Ziccarelli's Talk</div>
+											<div class="location">Grainger Auditorium, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">5:30pm</div>
+										<div class="description">
+											<div class="heading">Tasos Karahalios' Talk</div>
+											<div class="location">Grainger Auditorium, ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">7:00pm</div>
+										<div class="description">
+											<div class="heading">Dinner</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">9:00pm</div>
+										<div class="description">
+											<div class="heading">NERF Wars</div>
+											<div class="location">Kenney Gym</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="column third">
+								<div class="column-heading">
+									<h3>Sunday</h3>
+									<h4>February 21</h4>
+								</div>
+								<ul class="agenda-details">
+									<li class="item">
+										<div class="time">12:00am</div>
+										<div class="description">
+											<div class="heading">Midnight Snack</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">3:00am</div>
+										<div class="description">
+											<div class="heading">Mini Meal</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">8:00am</div>
+										<div class="description">
+											<div class="heading">Breakfast</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time red">10:00am</div>
+										<div class="description">
+											<div class="heading">Hacking Ends</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time">11:00am</div>
+										<div class="description">
+											<div class="heading">Lunch</div>
+											<div class="location">Siebel Center/ECEB</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time red">12:00pm</div>
+										<div class="description">
+											<div class="heading">Project Expo and Closing Ceremony</div>
+											<div class="location">Illini Union</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+									<li class="item">
+										<div class="time red">5:00pm</div>
+										<div class="description">
+											<div class="heading">Buses Depart</div>
+											<div class="location">Siebel Center</div>
+										</div>
+										<div class="clear"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div style="width:100%;height:120px;"></div>
+
+					<div class="sponsor-unit">
+						<div class="top-trim"></div>
+
+						<div class="box-container">
+							<!-- START sponsor content and side trims -->
+							<div class="side-trim shadow"></div>
+							<div class="sponsor-content">
+								<div class="shoutout shadow">
+									<h2>Made possible by our wonderful sponsors</h2>
+									<h3 class="shoutout-text">Interested in Sponsoring? Check out our <a href="/sponsor">sponsorship opportunities!</a></h3>
+								</div>
+
+								<div class="logo-container">
+									<div class="logo-row">
+										<div class="logo logo-100">
+											<a href="http://www.e-imo.com">
+												<img class="bug-img shake" src="/assets/img/home/_bugs/imo-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-imo.png">
+											</a>
+										</div>
+									</div>
+                          <div class="logo-row">
+										<div class="logo logo-50">
+											<a href="http://www.climate.com">
+												<img class="bug-img shake" src="/assets/img/home/_bugs/climate-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-climate.png">
+											</a>
+										</div>
+										<div class="logo logo-50">
+											<a href="http://www.apple.com/jobs/students">
+												<img class="bug-img shake" src="/assets/img/home/_bugs/apple-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-apple.png">
+											</a>
+										</div>
+                          </div>
+									<div class="logo-row">
+										<div class="logo logo-33">
+											<a href="http://www.kcg.com">
+												<img class="bug-img shake" src="/assets/img/home/_bugs/kcg-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-kcg.png">
+											</a>
+										</div>
+										<div class="logo logo-33">
+											<a href="http://www.microsoft.com">
+												<img class="bug-img shake" src="/assets/img/home/_bugs/microsoft-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-microsoft.png">
+											</a>
+										</div>
+										<div class="logo logo-33">
+											<a href="https://www.llnl.gov/">
+												<img class="bug-img l-l shake" src="/assets/img/home/_bugs/llnlab-bug.png">
+												<img class="nametag" src="/assets/img/home/_logos/logo-llnlab.png">
+											</a>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="logo-row">
+										<div class="logo logo-25">
+											<a href="http://www.a16z.com">
+												<img class="nametag" alt="Andreessen Horowitz" src="/assets/img/home/_logos/logo-andreessen.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.kpcb.com">
+												<img class="nametag" alt="KPCB" src="/assets/img/home/_logos/logo-kpcb.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.palantir.com">
+												<img class="nametag" alt="Palantir" src="/assets/img/home/_logos/logo-palantir.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.capitalone.com">
+												<img class="nametag" alt="Capital One" src="/assets/img/home/_logos/logo-capitalone.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.csgi.com">
+												<img class="nametag" alt="CSG International" src="/assets/img/home/_logos/logo-csg.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.indeed.com">
+												<img class="nametag" alt="Indeed" src="/assets/img/home/_logos/logo-indeed.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.att.com">
+												<img class="nametag" alt="AT&T" src="/assets/img/home/_logos/logo-att.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.facebook.com">
+												<img class="nametag" alt="Facebook" src="/assets/img/home/_logos/logo-facebook.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.godaddy.com">
+												<img class="nametag" alt="GoDaddy" src="/assets/img/home/_logos/logo-godaddy.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://wolfram.com">
+												<img class="nametag" alt="Wolfram" src="/assets/img/home/_logos/logo-wolfram.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.trunkclub.com/">
+												<img class="nametag" alt="Trunk Club" src="/assets/img/home/_logos/logo-trunkclub.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.salesforce.com">
+												<img class="nametag" alt="" src="/assets/img/home/_logos/logo-salesforce.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.amadeus.com">
+												<img class="nametag" alt="Amadeus" src="/assets/img/home/_logos/logo-amadeus.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.inin.com">
+												<img class="nametag" alt="Interactive Intelligence" src="/assets/img/home/_logos/logo-inin.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.wolve.com">
+												<img class="nametag" alt="Wolverine Trading" src="/assets/img/home/_logos/logo-wolverine.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.vmware.com">
+												<img class="nametag" alt="VMWare" src="/assets/img/home/_logos/logo-vmware.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.ibm.com">
+												<img class="nametag" alt="IBM" src="/assets/img/home/_logos/logo-ibm.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="https://www.deere.com">
+												<img class="nametag" alt="John Deere" src="/assets/img/home/_logos/logo-johndeere.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.niksun.com">
+												<img class="nametag" alt="Niksun" src="/assets/img/home/_logos/logo-niksun.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.viasat.com">
+												<img class="nametag" alt="Viasat" src="/assets/img/home/_logos/logo-viasat.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.3redgroup.com">
+												<img class="nametag" alt="3Red Group" src="/assets/img/home/_logos/logo-3red.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.citadel.com">
+												<img class="nametag" alt="Citadel" src="/assets/img/home/_logos/logo-citadel.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.ge.com">
+												<img class="nametag" alt="General Electric" src="/assets/img/home/_logos/logo-ge.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.onenorth.com">
+												<img class="nametag" alt="One North" src="/assets/img/home/_logos/logo-onenorth.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.solstice-mobile.com">
+												<img class="nametag" alt="Solstice Mobile" src="/assets/img/home/_logos/logo-solsticemobile.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.rockwellcollins.com">
+												<img class="nametag" alt="Rockwell Collins" src="/assets/img/home/_logos/logo-rockwellcollins.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.google.com/about/careers/students">
+												<img class="nametag" alt="Google" src="/assets/img/home/_logos/logo-google.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.airbnb.com">
+												<img class="nametag" alt="Airbnb" src="/assets/img/home/_logos/logo-airbnb.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.alere.com">
+												<img class="nametag" alt="Alere EdTech" src="/assets/img/home/_logos/logo-alere.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.akunacapital.com">
+												<img class="nametag" alt="Akuna Capital" src="/assets/img/home/_logos/logo-akunacapital.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.grainger.com">
+												<img class="nametag" alt="W. W. Grainger" src="/assets/img/home/_logos/logo-grainger.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.boozallen.com">
+												<img class="nametag" alt="Booz Allen Hamilton" src="/assets/img/home/_logos/logo-boozallen.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.agrible.com">
+												<img class="nametag" alt="Agrible" src="/assets/img/home/_logos/logo-agrible.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.northropgrumman.com">
+												<img class="nametag" alt="Northrop Grumman" src="/assets/img/home/_logos/logo-northropgrumman.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.hbkengineering.com">
+												<img class="nametag" alt="HBK Engineering" src="/assets/img/home/_logos/logo-hbk.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.yahoo.com">
+												<img class="nametag" alt="Yahoo" src="/assets/img/home/_logos/logo-yahoo.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="https://www.veeva.com">
+												<img class="nametag" alt="Veeva Systems" src="/assets/img/home/_logos/logo-veeva.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.jetbrains.com">
+												<img class="nametag" alt="Jetbrains" src="/assets/img/home/_logos/logo-jetbrains.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.soylent.com">
+												<img class="nametag" alt="Soylent" src="/assets/img/home/_logos/logo-soylent.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://makerlab.illinois.edu">
+												<img class="nametag" alt="Makerlab" src="/assets/img/home/_logos/logo-makerlab.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.get.tech">
+												<img class="nametag" alt="Radix" src="/assets/img/home/_logos/logo-radix.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.namecheap.com">
+												<img class="nametag" alt="Namecheap" src="/assets/img/home/_logos/logo-namecheap.png">
+											</a>
+										</div>
+										<div class="logo logo-25">
+											<a href="http://www.cloudera.com">
+												<img class="nametag" alt="Cloudera" src="/assets/img/home/_logos/logo-cloudera.png">
+											</a>
+										</div>
+
+									</div>
+
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="side-trim lock-container">
+								<a href="/sponsor"><div class="lock"></div></a>
+							</div>
+							<!-- END sponsor content and side trims -->
+						</div>
+
+						<div class="bottom-trim"></div>
+					</div>
+
+					<!-- <div class="lead-sponsor-shoutout">
+					<h1 class="shoutout-heading">Made possible by our wonderful sponsors</h1>
+					<h2 class="shoutout-text">Interested in Sponsoring? Check out our <a href="/sponsor">sponsorship opportunities!</a></h2>
+					<a href="https://www.e-imo.com" target="_blank"><img class="sponsor-postcard" src="/assets/img/home/IMO.svg" alt="Intelligent Medical Objects"></a>
+					</div> -->
+				</div>
+				<div class="clutter-top-left"></div>
+				<div class="clutter-top-right"></div>
+				<div class="binder-clutter">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+
+				<div class="footer">
+					<img class="footer-slant" src="/assets/img/home/footer-01.svg">
+					<div class="footer-content">
+						<p>
+			            	© HackIllinois 2016. Co-Hosted by <a href="https://www.e-imo.com" target="_blank">Intelligent Medical Objects</a>
+			            	<br>
+			            	With <a href="https://cs.illinois.edu" target="_blank">CS @ ILLINOIS</a>, <a href="http://www.ece.illinois.edu" target="_blank">ECE ILLINOIS</a>, <a href="https://www-s.acm.illinois.edu/" target="_blank">ACM@UIUC</a> and <a href="https://ieee.illinois.edu/" target="_blank">IEEE UIUC</a>
+			        	</p>
+			        	<div class="social-icons">
+			        		<a href="https://www.facebook.com/hackillinois" target="_blank"><img class="social-icon facebook" src="/assets/img/home/facebook.svg"></a>
+			        		<a href="https://twitter.com/hackillinois" target="_blank"><img class="social-icon" src="/assets/img/home/twitter.svg"></a>
+			        	</div>
+			        	<div style="clear: both"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+{% block body_scripts %}
+    <script src="/assets/js/index.min.js"/></script>
+{%- endblock %}

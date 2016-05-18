@@ -1,0 +1,215 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; Prizes {% endblock %}
+{% block head_styles %}
+<link rel="stylesheet" href="/assets/css/external.min.css" />
+<style>
+p.show { margin-bottom: 14px; }
+.arrow.rotated { -webkit-transform: rotate(-180deg); -ms-transform: rotate(-180deg); transform: rotate(-180deg); }
+#wrapper {max-width: 960px;}
+.logo {
+  display: block;
+  width: 120px;
+  margin: 0 auto 50px;
+  margin-top: 30px;
+  max-width: 300px;
+  float: none;
+}
+</style>
+{% endblock %}
+{% block body %}
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+    <div id="content">
+    <a href="/dayof">
+      <div class="logo">
+        <img src="./assets/img/logo.png" class="logo">
+      </div>
+    </a>
+    <div id="wrapper">
+        <!-- Where you put the content of the website -->
+
+        <h3>Sponsored Prizes</h3>
+        <div class="single-route-info show" style="border-bottom: none;">
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">a16z<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Most Technically Challenging Hack</h5>
+                <p>Prize: Anki Drive</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Amadeus<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Amadeus APIs</h5>
+                <p>Prize: Choice between iPad or Android tablet</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Apple<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best iOS or OS X app</h5>
+                <p>Prize: Apple Watch for everyone</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">AT&T<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <p>Prize: Microsoft Lumia 640XL and 950</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Capital One<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Capital One API</h5>
+                <p>Prize: Each member recieves a $350 Amazon Gift Card</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Citadel<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5></h5>
+                <p>Prize: “Chicago Experience” gift. The prize winner will receieve a hotel gift card, a restaurant group gift card and a tin of Garrett’s popcorn.</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Climate Corporation<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Use of Climate Corporation API</h5>
+                <p>Prize: 1st Place: $1,000, 2nd Place: $500, 3rd Place: $250</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">CSG International<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of CSG International API</h5>
+                <p>Prize: $500 and 1 Beanbag Chair</p>
+                <p>Utilize a subset of CSG’s Ascendon API to create your own unique entertainment experience application. Our API will allow you to browse categories of preconfigured movies and television shows, search for the details of particular products and even provide the metadata necessary to play trailers of the movies. We want to see your creativity and ingenuity in what you can do with this data. Some suggestions include creating a unique browsing experience, integrating with another site such as IMDB or RottenTomatoes for user ratings, overlaying the ability to create a “watchlist” or integrating with social media. Your creation must use our API to be eligible for our prizes but beyond that the uniqueness, creativity and coolness of UX will be what we will be rating entries on.</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Facebook<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Facebook's Favorite Hack</h5>
+                <p>Prize: Trip for 4 to the Global Hackathon Finals in Menlo Park, CA in Fall of 2016</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">GE Digital<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Natural User Interface</h5>
+                <p>Prize: Leap Motion Controllers</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Google<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Google Tech</h5>
+                <p>Prize: Each member will receive a Huawei Android Wear Watch and a Google sweatshirt</p>
+
+                <h5>Most Creative Animated Google Photo</h5>
+                <p>Prize: Each member of winning team will receive an  Android Plushie and the choice between Chromecast or Chromecast Audio. Send your entries to hackillinois@google.com!</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Intel<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i></h4>
+                <h5>Best use of Intel microcontroller boards</h5>
+                <p>1st: Intel Edison + Grove Indoor Environment kit for Edison<br>
+                2nd: Arduino 101 + Grove Indoor Environment kit for Edison<br>
+                3rd: Arduino 101 </p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Intelligent Medical Objects, Inc.<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of IMO API for (big) data and/or healthcare software innovation</h5>
+                <p>1st: JBL Flip 2 Splashproof Speakers  2nd: Quadcopter Drone w/ HD Camera 3rd: Everki Messenger Bag </p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Indeed<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Most Interesting use of Search</h5>
+                <p>Prize: Each member will receive a $50 Amazon Gift Card</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">John Deere<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of John Deere APIs to Solve an Agricultural Problem</h5>
+                <p>Prize: 1st Place: $800, 2nd Place: $500</p>
+                <h5>John Deere Mission Prize</h5>
+                <p>Best Hack that helps meet the world's dramatically increasing need for food, fuel, shelter, and infrastructure</p>
+                <p>Prize: $300</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">KCG<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of an Automated Test</h5>
+                <p>Prize: Each member receives a Raspberry Pi FPGA Kit (LOGI Pi Development Board, Raspberry Pi 2 Model B and Bodel B + Case and a Raspberry Pi 2 Model B 1GB Project Board), and the team receives $350 gift card</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Microsoft<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Microsoft Hack</h5>
+                <p>Prize: Microsoft Band v2</p>
+                <h5>Best Use of Azure</h5>
+                <p>Prize: Dell Venue 8 Pro</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Namecheap<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Domain Name Registered with Namecheap</h5>
+                <p>Prize: $150 NC Credit</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Palantir<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Real World Application</h5>
+                <p>Prize: Each member recieves a set of PowerBeats2</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Radix<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of .tech domain</h5>
+                <p>Prize: $50 for each member</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Salesforce<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5></h5>
+                <p>Prizes: 4 Apple Watches</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Solstice Mobile<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Emerging Tech to Make an Impact</h5>
+                <p>Prize: IoT Treasure Chest valued at over $700</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Trunk Club<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best project for building and maintaining relationships</h5>
+                <p>Prize: $200 Trunk Club gift card for each member</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Veeva<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Hack that Saves the Most Lives</h5>
+                <p>Prize: 1st Place: $500</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">ViaSat<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best demonstration of Connecting the World using any of our core technologies</h5>
+                <p>Prize: $500 cash prize for two winning teams</p>
+                <p>We’re looking for the two hacks that best demonstrates our mission of Connecting the World using any of our core technologies:<br>
+                · Big Data / Analytics<br>
+                · Cloud Computing<br>
+                · Virtualization<br>
+                · Data Visualization<br>
+                · Secure Connectivity<br>
+                · Mobile Applications<br>
+                Here are some potential applications of these technologies: personal communications, telemedicine, e-commerce, and distance learning. Please stop by our table if you have questions, we’re excited to see your hacks!</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">VMWare<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best use of Virtualization</h5>
+                <p>Prize: 4 $50 Gift Cards</p>
+            </div>
+            <div class="single-route-info company top show">
+                <h4 id="company" style="margin-top: 24px;">Wolfram<i class="down ui sharp  icon"><img class="arrow" style="height:25px; opacity: 0.5;" src="assets/img/down.png"/></i> </h4>
+                <h5>Best Use of Wolfram Tech</h5>
+                <p>Prize: Each member will receive a Raspberry Pi, $100, a year of Wolfram Pro Access, and 1 year of Wolfram Developer Platform at Producer Level</p>
+            </div>
+            <br>
+        </div>
+
+        <h3>HackIllinois Hardware Prizes</h3>
+        <div class="single-route-info top">
+            <p class="show">The HackIllinois Judges, who specialize in hardware, will judge your projects based on a predetermined set of criteria. For more information, please see  <a href="http://www.hackillinois.org/judging">hackillinois.org/judging</a> </p>
+            <p class="show">1st Place: $1000</p>
+            <p class="show">2nd Place: $750</p>
+            <p class="show">3rd Place: $500</p>
+            <br>
+        </div>
+
+        <h3>HackIllinois Software Prizes</h3>
+        <div class="single-route-info top show">
+            <p class="show">The HackIllinois Judges, who specialize in software, will judge your projects based on a predetermined set of criteria. For more information, please see  <a href="http://www.hackillinois.org/judging">hackillinois.org/judging</a> </p>
+            <p class="show">1st Place: $1000</p>
+            <p class="show">2nd Place: $750</p>
+            <p class="show">3rd Place: $500</p>
+            <br>
+        </div>
+
+        <h3>Questions?</h3>
+        <p>Shoot us an email at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a> with any questions!</p>
+
+    </div>
+    </div>
+  </div>
+  {% endblock %} {% block body_scripts %}
+  <script src="/assets/js/external.min.js"></script>
+  {% endblock %}

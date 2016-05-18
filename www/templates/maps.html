@@ -1,0 +1,94 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; Maps {% endblock %}
+{% block head_styles %}
+<link rel="stylesheet" href="/assets/css/external.min.css" />
+<style>
+    .bannerLayout { position: absolute; width: 100%; }
+    #wrapper {max-width: 960px;}
+    .logo {
+      display: block;
+      width: 120px;
+      margin: 0 auto 50px;
+      margin-top: 30px;
+      max-width: 300px;
+      float: none;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+    <div id="content">
+    <a href="/dayof">
+      <div class="logo">
+        <img src="./assets/img/logo.png" class="logo">
+      </div>
+    </a>
+    <div id="wrapper">
+
+        <h3>Getting around</h3>
+        <p>
+            Here are some maps to help you explore new frontiers at HackIllinois:
+        </p>
+        <div class="single-route-info top">
+            <h4 class="">Maps of Siebel<i class="down ui sharp  icon"><img style="height:25px;" src="assets/img/down.png"/></i></h4>
+            <h5 class="">Floor 1</h5>
+            <p class="">
+                <object style="width:90%" data="assets/img/maps/siebel-1st.png" type="image/png"></object>
+            </p>
+            <h5 class="">Floor 2</h5>
+            <p class="">
+                <object style="width:90%" data="assets/img/maps/siebel-2nd.png" type="image/png"></object>
+            </p>
+        </div>
+        <br>
+        <div class="single-route-info">
+            <h4 class="">Maps of ECEB<i class="down ui sharp  icon"><img style="height:25px;" src="assets/img/down.png"/></i></h4>
+            <h5 class="">Floor 1</h5>
+            <p class="">
+                <object style="width:90%" data="assets/img/maps/eceb-1st.png" type="image/png"> </object>
+            </p>
+            <h5 class="">Floor 2</h5>
+            <p class="">
+                <object style="width:90%" data="assets/img/maps/eceb-2nd.png" type="image/png"></object>
+            </p>
+            <h5 class="">Floor 3</h5>
+            <p class="">
+                <object style="width:90%" data="assets/img/maps/eceb-3rd.png" type="image/png"></object>
+            </p>
+        </div>
+        <br>
+        <div class="single-route-info top">
+            <h4 class="">General Maps<i class="down ui sharp  icon"><img style="height:25px;" src="assets/img/down.png"/></i></h4>
+            <p class="">
+              ECEB &amp; Siebel
+              <br />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1525.629945807608!2d-88.22767349185946!3d40.11421134485038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s40.114791%2C+-88.227913!3m2!1d40.114791!2d-88.227913!4m5!1s0x880cd76baa8479a9%3A0x4e9f01d40d359630!2sThomas+M.+Siebel+Center+for+Computer+Science%2C+201+N+Goodwin+Ave%2C+Urbana%2C+IL+61801!3m2!1d40.113802799999995!2d-88.2249052!5e0!3m2!1sen!2sus!4v1455925709502" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </p>
+        </div>
+        <br>
+        <div class="single-route-info top">
+            <h4 class="">Maps to Kenney Gym<i class="down ui sharp  icon"><img style="height:25px;" src="assets/img/down.png"/></i></h4>
+            <p class="">
+                From Siebel
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1536.2627850944095!2d-88.22839096079657!3d40.1132704594952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s40.113829%2C+-88.225628!3m2!1d40.113828999999996!2d-88.225628!4m5!1s0x880cd74044e07d5f%3A0x11768222f21aed3f!2sKenny+Gym%2C+West+Springfield+Avenue%2C+Urbana%2C+IL!3m2!1d40.1130481!2d-88.228383!5e0!3m2!1sen!2sus!4v1455579702609" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1525.6255308799412!2d-88.22803049168864!3d40.11440814485035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x880cd76baa8479a9%3A0x4e9f01d40d359630!2sThomas+M.+Siebel+Center+for+Computer+Science%2C+201+North+Goodwin+Avenue%2C+Urbana%2C+IL+61801!3m2!1d40.113802799999995!2d-88.2249052!4m5!1s0x880cd741bdddae19%3A0x6e4983eac7bc5ee6!2s306+S+Wright+St%2C+Urbana%2C+IL+61801!3m2!1d40.1149031!2d-88.2281763!5e0!3m2!1sen!2sus!4v1455929367789" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </p>
+            <p class="">
+                <br>
+                From ECEB
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d3051.277316360873!2d-88.23002623473295!3d40.113822979401554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s40.114967%2C+-88.227827!3m2!1d40.114967!2d-88.22782699999999!4m5!1s0x880cd74044e07d5f%3A0x11768222f21aed3f!2sKenny+Gym%2C+West+Springfield+Avenue%2C+Urbana%2C+IL!3m2!1d40.1130481!2d-88.228383!5e0!3m2!1sen!2sus!4v1455579440837" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </p>
+        </div>
+        <br>
+        <h3>Questions?</h3>
+        <p>Shoot us an email at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a> with any questions!</p>
+    </div>
+    </div>
+  </div>
+  {% endblock %} {% block body_scripts %}
+  <script src="/assets/js/external.min.js"></script>
+  {% endblock %}

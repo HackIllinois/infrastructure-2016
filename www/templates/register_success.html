@@ -1,0 +1,20 @@
+{% extends "templates/base_pane.html" %}
+{% block title %} HackIllinois &middot; Register {% endblock %}
+
+{% block app_status %}
+  <span id="app-status-detail" class="status-complete"> Submitted </span>
+{% endblock %}
+{% block pane_id %}success-pane{% endblock %}
+{% block pane %}
+  <img id="backpack" src='/assets/img/backpack.png'>
+    <h1>You're all set! Let the adventure begin!</h1>
+    <h3>Your application has been submitted. Share the news:</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/hackillinois" target="_blank"><img class="social-icon" src="/assets/img/home/facebook.svg"></a>
+      <a href="https://twitter.com/hackillinois" target="_blank"><img class="social-icon" src="/assets/img/home/twitter.svg"></a>
+    </div>
+    <div id="review">
+      <h3>Want to make changes?</h3>
+      <a href="/register">Review Application</a>
+    </div>
+{% endblock %}

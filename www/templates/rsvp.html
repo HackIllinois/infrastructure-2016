@@ -1,0 +1,73 @@
+{% extends "templates/base_pane.html" %}
+{% block title %} HackIllinois &middot; RSVP {% endblock %}
+
+{% block app_status %}
+  <span id="app-status-detail" class="status-accepted"> Accepted </span>
+{% endblock %}
+{% block pane_id %}rsvp-pane{% endblock %}
+{% block pane %}
+  {% set response = registrant.response if registrant else None %}
+  <div id="icon-block" class="row">
+    <a href="/"><img id="logo" src="/assets/img/logo_gray.png"></a>
+  </div>
+  <div class="row">
+    <h1>Congratulations! You're in!</h1>
+    <h3 id="sub-title">Just a couple more questions.</h3>
+  </div>
+  <form id="rsvp-form" data-os="{{ 'true' if registrant.initiative == 'OPEN_SOURCE' else 'false' }}">
+    <div id="regular-container">
+      <div class="row marginless">
+        <span class="caption">Will you be able to attend the event?</span>
+      </div>
+      <div id="attending-row" class="row">
+        <input type="text" id="attending" name="attending" placeholder="Choose an Option" data-selectize-value="{{ (response.attending|string).lower() if response else 'none' }}" data-parsley-required data-parsley-errors-container="#attending-error">
+        <span id="attending-error" class="errors"></span>
+      </div>
+      <div id="transportation-caption" class="row marginless {{ 'hidden' if not (response and response.attending) else '' }}">
+        <span class="caption">How will you be getting here? Check out <a href="/travel" target="_blank">hackillinois.org/travel</a> for more information.</a></span>
+      </div>
+      <div id="transportation-row" class="row {{ 'hidden' if not (response and response.attending) else '' }}">
+        <input type="text" id="transportation" name="transportation" placeholder="Choose an Option" data-selectize-value="{{ response.transportation if response else '' }}" data-parsley-required data-parsley-errors-container="#transportation-error">
+        <span id="transportation-error" class="errors"></span>
+      </div>
+      <div id="transportation-details-caption" class="row marginless {{ 'hidden' if not (response and response.attending and response.transportation == 'DRIVING') else '' }}">
+        <span class="caption">Who will you be riding with?</span>
+      </div>
+      <div id="transportation-details-row" class="row {{ 'hidden' if not (response and response.attending and response.transportation == 'DRIVING') else '' }}">
+        <input type="text" id="transportation-details" name="transportationDetails" placeholder="Please provide names here (optional)" value="{{ response.transportation_details if response.transportation_details else '' }}" />
+      </div>
+      <div id="transportation-details-2-row" class="row {{ 'hidden' if not (response and response.attending and response.transportation == 'DRIVING') else '' }}">
+        <p>We’ll be providing gas reimbursements (up to $150) for drivers who drive at least two other people. If that sounds like it will apply to you, make sure that the friends you've listed also RSVP and select “Driving”.</p>
+        <p>And hang on to those receipts! On Saturday, February 20th, you will be asked to submit proof that you purchased gas on the way here. To be reimbursed for the return trip as well, you will need to mail in the related reciepts for that trip too. For information, please see the link above.</p>
+      </div>
+      <div id="reimbursement-question-row" class="row {{ 'hidden' if (response and (response.attending and response.transportation != 'NOT_NEEDED') or not response.attending) else '' }}">
+        <a href="#reimburse" id="reimbursement-question" data-answer="false">Do you qualify for being reimbursed for a flight?</a>
+      </div>
+      <div id="submit-row" class="row">
+        <button type="submit" id="submit" class="{{ 'update' if response else ''}}">{{ 'Respond' if not response else 'Update Response' }}</button>
+      </div>
+    </div>
+    {% if registrant.initiative == 'OPEN_SOURCE' %}
+      <iframe id="os-response" class="hidden" src="https://docs.google.com/forms/d/1e9yxGEWG1ZAobrPZLJqpg9xDIyx_M8dZqJDzuVMpOf0/viewform?c=0&w=1" style="margin-bottom: 1em" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="800px">Loading...</iframe>
+    {% endif %}
+    <div id="positive-response" class="row hidden">
+      {% if not response %}
+        <h4 class="marginless">That's it! You may come back to this page later to update your response, if needed.</h4>
+        {% if registrant.initiative == 'OPEN_SOURCE' %}
+          <h4 class="marginless">Before you go, please be sure to fill out the preference form above. We'll need it to make sure we put you on an open-source project that you'll enjoy.</h4>
+        {% endif %}
+      {% else %}
+        <h4 class="marginless">Great! As before, you may come back to this page later to update your response.</h4>
+      {% endif %}
+      <h4 class="marginless">See you on February 19th!</h4>
+    </div>
+    <div id="negative-response" class="row hidden">
+      <h4 class="marginless">Dang! We hope you'll be able to make it next year.</h4>
+      <h4 class="marginless">If anything changes, you may come back to this page to update your response.</h4>
+    </div>
+  </form>
+{% endblock %}
+
+{% block body_scripts %}
+<script src="/assets/js/rsvp.min.js" /></script>
+{% endblock %}

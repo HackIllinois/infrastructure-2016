@@ -1,0 +1,117 @@
+{% extends "templates/admin_base.html" %}
+{% block title %}Check In{% endblock %}
+{% block body %}
+
+<div class="row marginless">
+  <div class="col-sm-9">
+    <h1>Check In</h1>
+  </div>
+  <div id="model-column" class="col-sm-3">
+    <select class="form-control" id="model">
+      <option value="HACKER" selected>Hacker</option>
+      <option value="SPONSORT1">Sponsor (Squirrel)</option>
+      <option value="SPONSORT2">Sponsor (Owl)</option>
+      <option value="SPONSORT3">Sponsor (Moose)</option>
+      <option value="SPONSORT4">Sponsor (Bear)</option>
+      <option value="SPONSORT5">Sponsor (Wolf)</option>
+      <option value="MENTOR">Mentor</option>
+      <option value="VOLUNTEER">Volunteer</option>
+      <option value="STAFF">Staff</option>
+      <option value="ADMINISTRATOR">Administrator</option>
+    </select>
+  </div>
+</div>
+<div class="row top-buffer">
+  <div class="col-sm-12">
+    <table class="table table-hover" id="table" width="100%" data-model="HACKER">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>School</th>
+          <th>Graduation</th>
+          <th>Organization</th>
+          <th>Checked In</th>
+        </tr>
+      </thead>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<div class="hidden">
+  <form id="search" class="form-inline">
+    <div class="col-sm-5 col-md-4">
+      <div class="form-group input-group col-xs-12">
+        <select id="select-query" class="form-control">
+          <option value="" selected="">All Fields</option>
+          <option value="email">Email</option>
+          <option value="0">First Name</option>
+          <option value="1">Last Name</option>
+          <option class="registered" value="2">School</option>
+          <option class="registered" value="3">Graduation</option>
+          <option class="organizational" value="4" disabled>Organization</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-7 col-md-8">
+      <div class="input-group col-xs-12">
+        <input id="search-query" type="text" class="form-control hidden" autocomplete="off" placeholder="Query">
+        <span class="input-group-btn">
+          <button id="query-action" class="btn btn-default" type="submit">Refresh</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+
+<h3 class="top-buffer">Sponsor Directory</h3>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p>
+      <strong>Squirrel Sponsors</strong><br />
+      Solstice Mobile, Rockwell Collins, Google, Airbnb, Alere EdTech, Akuna Capital, Grainger,
+      Booz Allen Hamilton, Agrible, Northrop Grunman, Soylent, Yahoo, HBK Engineering,
+      Namecheap, Thiel Foundation, Cloudera
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p>
+      <strong>Owl Sponsors</strong><br />
+      a16z, KPCB, Palantir, Capital One, CSG International, Indeed, AT&amp;T, Facebook, GoDaddy,
+      Wolfram, Trunk Club, Salesforce, Amadeus, Interactive Intelligence, Wolverine, VMWare,
+      IBM, John Deere, Niksun, Viasat, 3RED, Citadel, GE (General Electric), One North, Intel
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p>
+      <strong>Moose Sponsors</strong><br />
+      Lawrence Livermore National Laboratory, KCG
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p>
+      <strong>Bear Sponsors</strong><br />
+      Apple, Microsoft, Climate Corporation/Monsanto, Anheuser Busch
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <p>
+      <strong>Wolf Sponsors</strong><br />
+      IMO
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/admin_checkin.min.js"></script>
+{% endblock %}

@@ -1,0 +1,148 @@
+$pane-bottom-gutter: 5em;
+section.stage {
+  @extend %unselectable;
+  width: 100%;
+  padding-bottom: $pane-bottom-gutter;
+  section.center-stage {
+    width: 100%;
+    div.pane {
+      @include pad(3em);
+      position: relative;
+      @media (max-width: 950px) {
+        width: 60%;
+        max-width: 575px;
+      }
+      @media (max-width: 775px) {
+        width: 70%;
+      }
+      @media (max-width: 630px) {
+        margin: 0 2em;
+        width: auto;
+      }
+      @media (min-width: 950px) {
+        max-width: 575px;
+      }
+      border-radius: 1px;
+      background-color: $white;
+      margin: 0 auto;
+      margin-top: 0.95em;
+
+      form {
+        @include pad(0 2em);
+        @media (max-width: 500px) {
+          @include pad(0);
+        }
+      }
+      input {
+        @extend %bordered-input;
+      }
+      input.joined-input {
+        @extend %joined-input;
+      }
+      select {
+        @extend %bordered-input;
+        background-color: $white;
+      }
+      button {
+        @extend %basic-input;
+        padding: 0;
+        background-color: $orange;
+        color: $white;
+        border: none;
+      }
+      button.joined-button {
+        @extend %joined-button;
+      }
+      span.caption-left, span.caption-right {
+        @include span-columns(6);
+        margin-right: 0;
+        margin-left: 2px;
+      }
+      span.caption {
+        @include span-columns(12);
+        margin-right: 0;
+        margin-left: 2px;
+      }
+      input.error,
+      select.error {
+        @extend %error;
+      }
+      select.error {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      span.errors {
+        span.filled {
+          span.error {
+            display: none;
+            color: $red;
+            background-color: $light-red;
+            padding: 0.25em 0.75em;
+            border: 2px solid $red;
+            border-top: 0;
+            border-bottom: 0;
+            border-top-right-radius: 3px !important;
+            border-top-left-radius: 3px !important;
+          }
+          span.error.active {
+            border-bottom: 2px solid $red;
+            border-radius: 3px;
+            display: block;
+          }
+        }
+      }
+      span.errors.attached {
+        span.filled {
+          span.error {
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+          }
+        }
+      }
+      div.selectize-control {
+        @include span-columns(12);
+        height: 33px !important;
+        div.selectize-input {
+          @extend %bordered-input;
+          font-size: $font-size;
+          box-shadow: none;
+          div.item {
+            float: left;
+            padding: 0;
+          }
+          input {
+            margin-top: -0.11em !important;
+          }
+        }
+        div.selectize-input.dropdown-active {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          height: auto;
+        }
+        div.selectize-dropdown {
+          width: 100% !important;
+        }
+        input {
+          height: auto;
+        }
+      }
+      input.error ~ div.selectize-control {
+        div.selectize-input {
+          @extend %error;
+        }
+      }
+      img#logo {
+        display: block;
+        width: 7em;
+        margin: 0 auto;
+      }
+      div.row,
+      div.table-row {
+        margin-bottom: 1em;
+      }
+      div.row input[type="text"] {
+        @include span-columns(12);
+      }
+    }
+  }
+}

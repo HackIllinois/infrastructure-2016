@@ -1,0 +1,45 @@
+{% extends "templates/admin_base.html" %}
+{% block title %} Check In Details {% endblock %}
+{% block body %}
+
+{% set subject = data.subject %}
+{% set descendant = subject.descendant %}
+{% set is_organizational = 'SPONSOR' in subject.role or subject.role == 'MENTOR' %}
+{% set uiuc = 'university of illinois - urbana-champaign' %}
+
+<h1 class="no-bottom">{{ descendant.first_name }} {{ descendant.last_name }}
+  {% if descendant.status %}
+    (<span class="{{ descendant.status|lower }}">{{ descendant.status|capitalize }}</span>)
+  {% else %}
+    (<span>{{ subject.role|capitalize if 'SPONSOR' not in subject.role else 'Sponsor' }}</span>)
+  {% endif %}
+</h1>
+{% if descendant.checked_in %}
+  <h4 id="checkinStatus" class="no-top" data-checkin-date="{{ descendant.checked_in|epoch_milliseconds }}"></h4>
+{% else %}
+  <h4 id="checkinStatus" class="no-top">Never checked in</h4>
+{% endif %}
+
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Tag</h3>
+    <div id="tag-details" data-first-name="{{ descendant.first_name }}" data-last-name="{{ descendant.last_name }}" data-network-login="{{ descendant.network_credentials.login if descendant.checked_in and descendant.network_credentials else '' }}" data-network-password="{{ descendant.network_credentials.password if descendant.checked_in and descendant.network_credentials else '' }}">
+      {% if not descendant.checked_in %}
+        <p id="tag-caption">Once you have checked-in this participant, an accurate preview of his/her tag will appear below. If you see any issues with the tag, please contact an administrator.</p>
+      {% endif %}
+      <img src="" id="tag-preview" />
+    </div>
+  </div>
+</div>
+
+<div class="row top-buffer bottom-buffer">
+  <div class="col-sm-12">
+    <button id="action" class="btn btn-default form-control" data-checkin-id="{{ subject.id }}" data-checked-in="{{ 1 if descendant.checked_in else 0 }}" disabled>
+      {{ 'Check In' if not descendant.checked_in else 'Print' }}
+    </button>
+  </div>
+</div>
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/admin_checkin_details.min.js"></script>
+{% endblock %}

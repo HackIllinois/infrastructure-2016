@@ -1,0 +1,16 @@
+cron:
+# the following cron jobs have been disabled
+# since the event has concluded
+#
+# - description: 24-hourly primary backup
+#   url: /_ah/datastore_admin/backup.create?name=primaryBackup&kind=User&kind=Unique&kind=Hacker&kind=Staff&kind=Mentor&kind=Sponsor&kind=Volunteer&filesystem=gs&gs_bucket_name=2016-hackillinois-backups
+#   schedule: every 24 hours
+#   target: ah-builtin-python-bundle
+# - description: 24-hourly eaccess dump
+#   url: /tasks/eaccess
+#   schedule: every day 03:00
+#   timezone: America/Chicago
+# - description: 24-hourly stats generation
+#   url: /tasks/dashboardstats
+#   schedule: every 60 minutes
+#   timezone: America/Chicago

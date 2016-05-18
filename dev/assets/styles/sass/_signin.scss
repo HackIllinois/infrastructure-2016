@@ -1,0 +1,208 @@
+$auth-pane-radius: 1px;
+$bottom-gutter: 5em;
+$auth-pane-width: 450px;
+$form-width: 276px;
+
+%error {
+  border-bottom: 0;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-color: $red;
+}
+
+section#auth-parent {
+  height: calc(100% - 5em);
+  @extend %valign-parent;
+
+  section#auth-child {
+    @extend %valign;
+    padding-bottom: $bottom-gutter;
+
+    div#auth-pane {
+      div.left-block, div.right-block{
+        width: calc(50% - 138px);
+      }
+      div#form-block {
+        margin: auto;
+        form {
+          @include pad(0 2em);
+        }
+        form.active {
+          display: inline-block;
+        }
+        input {
+          @extend %bordered-input;
+        }
+        input.joined-input {
+          @extend %joined-input;
+        }
+        button {
+          @extend %basic-input;
+          padding: 0;
+          background-color: $blue;
+          color: $white;
+          border: none;
+        }
+        button.joined-button {
+          @extend %joined-button;
+        }
+
+        div.row, div.table-row {
+          margin-bottom: 1em;
+        }
+
+        div.row input {
+          @include span-columns(12);
+        }
+
+        input {
+          @include pad();
+        }
+        form#auth {
+          width: $form-width;
+          color: $text-black;
+           .hidden {
+             display: none;
+           }
+           div#input-container {
+             div {
+               margin-top: 0;
+               margin-bottom: 0;
+               position: relative;
+              input {
+                border-bottom-style: none;
+                border-radius: 0;
+              }
+              input.error {
+                background-color: $light-red;
+              }
+              input + div.validate-representation {
+                visibility: hidden;
+                position: absolute;
+                right: 0;
+                width: calc(2.5em / 2);
+                height: calc(2.5em / 2);
+                margin: calc(2.5em / 4);
+                background-size: contain;
+                background-repeat: no-repeat;
+              }
+              input.error + div.validate-representation {
+                visibility: visible;
+                background-image: url(../img/red-x.png);
+              }
+              input.parsley-success + div.validate-representation {
+                visibility: visible;
+                background-image: url(../img/green-check.png);
+              }
+              }
+              div:first-of-type{
+                input {
+                  border-radius: 3px 3px 0 0;
+                }
+              }
+              div:last-of-type{
+                input {
+                  border-radius: 0 0 3px 3px;
+                  border-bottom-style: solid;
+                }
+              }
+              div:only-of-type{
+                input {
+                  border-radius: 3px;
+                  border-bottom-style: solid;
+                }
+              }
+           }
+           button, div {
+             margin-bottom: 0.75em;
+             @include span-columns(12);
+             text-align: center;
+           }
+           .link {
+             color: $light-purple;
+             cursor: pointer; cursor: hand;
+           }
+           #auth-login {
+             background-color: $burnt-orange;
+           }
+           #auth-signup {
+             background-color: $light-purple;
+           }
+           #messageContainer {
+             color: $muted-white;
+           }
+        }
+        > * {
+          display: inline-block;
+          vertical-align: top;
+          float: left;
+        }
+
+        #auth-errors{
+          .error-container{
+            min-height: 2.5em;
+            * {
+              display: inline-block;
+            }
+            ul.parsley-errors-list {
+              margin: 0;
+              padding: 0;
+            }
+            .error {
+              display: inline-table;
+              color: $light-red;
+              @extend %callout-right;
+              @extend %bordered-input;
+              background-color: $red-orange;
+              &:before{
+              top: calc(2.5em / 2 - 8px);
+              border-right-color: $red-orange;
+              }
+          }
+
+          }
+        }
+      }
+    }
+    div#header-pane {
+      max-width: $auth-pane-width;
+      border-radius: $auth-pane-radius;
+      margin: 0 auto;
+      margin-top: 0.95em;
+      img#logo {
+        display: block;
+        width: 7em;
+        margin: 0 auto;
+      }
+      div#title-block {
+        padding: 0 1em;
+        margin: 0.75em;
+        margin-bottom: 0;
+        h3.section-title {
+          color: $muted-white;
+          text-align: center;
+          font-weight: lighter;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  span.registration-nav {
+    cursor: pointer;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  section#auth-parent {
+    section#auth-child {
+      div#auth-pane {
+        div#form-block {
+          #auth-errors{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

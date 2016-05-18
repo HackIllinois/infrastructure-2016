@@ -1,0 +1,504 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; APIs {% endblock %}
+{% block head_styles %}
+<link rel="stylesheet" href="/assets/css/external.min.css" />
+<style>
+.company-panel{ min-height: 300px; border: 1px solid brown; border: 1px solid brown; padding: 20px; }
+.company-image{ height: 200px; position: relative; }
+.company-image img{ display: block; max-width:100%; max-height:200px; position: absolute; top: 50%; transform: translateY(-50%); right: 0; left: 0; margin: 0 auto; }
+.center{ text-align: center;}
+#wrapper {max-width: 960px;}
+</style>
+{% endblock %}
+{% block body %}
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+<div id="content">
+  <div id="wrapper">
+		<div id="mainContent">
+			<h1 class="text-header">SPONSOR APIs</h1>
+			<div class="ui grid">
+				<div class="three column row">
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="http://hackillinois2016.e-imo.com/api/">
+								<img src="assets/img/home/_logos/logo-imo.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="http://hackillinois2016.e-imo.com/api/">IMO</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Intelligent Medical Objects (IMO) develops, manages, and licenses medical terminology and healthcare IT software applications that allow clinicians to capture their clinical intent at the point-of-care.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.apple.com/resources/">
+								<img src="assets/img/home/_logos/logo-apple.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.apple.com/resources/">Apple</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Apple revolutionized personal technology with the introduction of the Macintosh in 1984. Today, Apple leads the world in innovation with iPhone, iPad, Mac, Apple Watch and Apple TV. Apple’s four software platforms — iOS, OS X, watchOS and tvOS — provide seamless experiences across all Apple devices and empower people with breakthrough services including the App Store, Apple Music, Apple Pay and iCloud. Apple’s 100,000 employees are dedicated to making the best products on earth, and to leaving the world better than we found it.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://azure.microsoft.com/en-us/services/api-management/">
+								<img src="assets/img/home/_logos/logo-microsoft.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://azure.microsoft.com/en-us/services/api-management/">Microsoft Azure</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Microsoft Azure is a growing collection of integrated cloud services—analytics, computing, database, mobile, networking, storage, and web—for moving faster, achieving more, and saving money.
+						</div>
+					</div>
+				</div>
+
+				<div class="three column row">
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://github.com/TheClimateCorporation">
+								<img src="assets/img/home/_logos/logo-climate.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://github.com/TheClimateCorporation">The Climate Corporation</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							The Climate Corporation aims to build a digitized world where every farmer is able to optimize and flawlessly execute every decision on the farm.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://console.ng.bluemix.net/catalog/?cm_mc_uid=45793575359714497792655&cm_mc_sid_50200000=1453408192%20https://console.ng.bluemix.net/catalog/?cm_mc_uid=45793575359714497792655&cm_mc_sid_50200000=1453408192">
+								<img src="assets/img/home/_logos/logo-ibm.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://console.ng.bluemix.net/catalog/?cm_mc_uid=45793575359714497792655&cm_mc_sid_50200000=1453408192%20https://console.ng.bluemix.net/catalog/?cm_mc_uid=45793575359714497792655&cm_mc_sid_50200000=1453408192">IBM</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							IBM is a global technology and innovation company headquartered in Armonk, NY. It is the largest technology and consulting employer in the world, with more than 400,000 employees serving clients in 170 countries. IBM offers a wide range of technology and consulting services; a broad portfolio of middleware for collaboration, predictive analytics, software development and systems management; and the world's most advanced servers and supercomputers. Utilizing its business consulting, technology and R&amp;D expertise, IBM helps clients become "smarter" as the planet becomes more digitally interconnected.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://github.com/palantir?utf8=%E2%9C%93&query=">
+								<img src="assets/img/home/_logos/logo-palantir.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://github.com/palantir?utf8=%E2%9C%93&query=">Palantir</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							We believe in augmenting human intelligence, not replacing it. With good data and the right technology, people and institutions today can still solve hard problems and change the world for the better.We saw a need for a different kind of technology, and we knew it would take a different kind of company to build it. That’s why we founded Palantir.
+						</div>
+					</div>
+				</div>
+
+				<div class="three column row">
+              <div class="column company-panel">
+                <div class="company-image">
+                  <span class="helper"></span>
+                  <a href="http://api.reimaginebanking.com">
+                    <img src="assets/img/home/_logos/logo-capitalone.png">
+                  </a>
+                </div>
+                  <hr/>
+                <div class="company-link center">
+                  <h1><a href="http://api.reimaginebanking.com/">Capital One</a></h1>
+                </div>
+                  <hr/>
+                <div class="company-desc">
+                  Capital One is one of the 10 largest banks by deposits in the country, and a Fortune 500 company. We're a diversified bank with a broad array of financial products and services. We lead by innovation. We approach financial services challenges the way an Internet start-up would approach a development challenge.
+                </div>
+              </div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://sandbox.amadeus.com">
+								<img src="assets/img/home/_logos/logo-amadeus.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="sandbox.amadeus.com">Amadeus</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Amadeus provides the technology which keeps the travel sector moving - from initial search to making a booking, from pricing to ticketing, from managing reservations to managing check-in and departure processes.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/">
+								<img src="assets/img/home/_logos/logo-salesforce.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/">Salesforce</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Salesforce is the innovative company behind the world’s #1 CRM platform. Our software is cloud-based, so it doesn’t require a team of IT experts to set up or manage — you just log in and start using it.
+						</div>
+					</div>
+				</div>
+
+
+				<div class="three column row">
+            <div class="column company-panel">
+              <div class="company-image">
+                <span class="helper"></span>
+                <a href="https://docs.google.com/file/d/0B3lOwMWHWsVaLTZfNEs1OVJ2em8/edit?usp=docslist_api&filetype=msword">
+                  <img src="/assets/img/home/_logos/logo-csg.png">
+                </a>
+              </div>
+                <hr/>
+              <div class="company-link center">
+                <h1><a href="https://docs.google.com/file/d/0B3lOwMWHWsVaLTZfNEs1OVJ2em8/edit?usp=docslist_api&filetype=msword">CSG International</a></h1>
+              </div>
+                <hr/>
+              <div class="company-desc">
+                <img style="display:block; max-width: 50%; margin: 0 auto;" src="/assets/img/sponsor/csg_qr.png" alt="CSG International"/>
+                Utilize a subset of CSG’s Ascendon API to create your own unique entertainment experience application. Our API will allow you to browse categories of preconfigured movies and television shows, search for the details of particular products and even provide the metadata necessary to play trailers of the movies. We want to see your creativity and ingenuity in what you can do with this data. Some suggestions include creating a unique browsing experience, integrating with another site such as IMDB or RottenTomatoes for user ratings, overlaying the ability to create a “watchlist” or integrating with social media. Your creation must use our API to be eligible for our prizes but beyond that the uniqueness, creativity and coolness of UX will be what we will be rating entries on.
+                <br />
+              </div>
+            </div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://software.intel.com/en-us">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://software.intel.com/en-us">Intel</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							You may know us for our processors. But we do so much more. Through computing innovation, we push the boundaries of smart and connected technology to make amazing experiences possible for every person on Earth. From powering the latest devices and the cloud you depend on, to driving policy, diversity, sustainability, and education, we create value for our stockholders, customers, and society.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="http://products.wolframalpha.com/api">
+								<img src="assets/img/home/_logos/logo-wolfram.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="http://products.wolframalpha.com/api/">Wolfram</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Founded by Stephen Wolfram in 1987, Wolfram Research is one of the world's most respected computer, web, and cloud software companies—as well as a powerhouse of scientific and technical innovation. As a pioneer in computation and computational knowledge, the company has pursued a long-term vision to develop the science, technology, and tools to make computation an ever-more-potent force in today's and tomorrow's world.
+						</div>
+					</div>
+				</div>
+
+				<div class="three column row">
+            <div class="column company-panel">
+  						<div class="company-image">
+  							<span class="helper"></span>
+  							<a href="https://developer.deere.com/#/home/landing">
+  								<img src="assets/img/home/_logos/logo-johndeere.png">
+  							</a>
+  						</div>
+  							<hr/>
+  						<div class="company-link center">
+  							<h1><a href="https://developer.deere.com/#/home/landing">John Deere</a></h1>
+  						</div>
+  							<hr/>
+  						<div class="company-desc">
+  							We are John Deere. We make tractors and combines and many other vehicles. We also create some of the finest technology powering the agriculture revolution in the world. One of these technologies we’ve built is our set of RESTful APIs that help John Deere and its partners assist our farmers, John Deere dealers, agronomists, and everyone else involved in getting our food grown and harvested. You will have the opportunity to access these APIs through developer.deere.com. Using these APIs, you’ll be able to see in-depth knowledge on what is going on in a farm, what has happened to John Deere equipment, as well as other information needed by farmers and others to make the best decisions possible to farm efficiently. Hack with us to develop new tools to help make farming even more sustainable, profitable, and manageable for farmers around the world. Not familiar with agriculture or heavy equipment? Challenge yourself to hack with us and create something in these rapidly changing fields.  John Deere is a world leader in providing advanced products and services and is committed to the success of those linked to the land-those who cultivate, harvest, transform, enrich and build upon the land- to meet the world’s dramatically increasing need for food, fuel, shelter, and infrastructure.
+  						</div>
+  					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://www.vmware.com/support/pubs/sdk_pubs.html">
+								<img src="assets/img/home/_logos/logo-vmware.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://www.vmware.com/support/pubs/sdk_pubs.html">VMWare</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Digital business transformation is creating new opportunities and risks in every industry. VMware helps IT become Brave New IT with our One Cloud, Any Application, Any Device architecture. By unifying private, managed and public clouds into one hybrid cloud, our customers accelerate innovation, engage customers with new mobile-cloud applications, and govern risk.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.inin.com/Pages/default.aspx">
+								<img src="assets/img/home/_logos/logo-inin.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.inin.com/Pages/default.aspx">Interactive Intelligence</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Interactive Intelligence provides software and cloud services for customer engagement, unified communications and collaboration to help businesses worldwide improve service, reduce costs, and grow their business faster.
+						</div>
+					</div>
+				</div>
+
+				<div class="three column row">
+              <div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://github.com/trunkclub">
+								<img src="assets/img/home/_logos/logo-trunkclub.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://github.com/trunkclub">Trunk Club</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Trunk Club was started to solve a simple problem: shopping for clothes in stores is overwhelming and inconvenient. With Trunk Club, you’ll discover great clothes that are perfect for you without ever having to go shopping. We combine top brands, expert service, and unparalleled convenience to deliver a highly personalized experience that helps you look your best.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.godaddy.com/">
+								<img src="assets/img/home/_logos/logo-godaddy.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.godaddy.com/">GoDaddy</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Space matters. We connect with our customers and dream up digital masterpieces in state-of-the-art offices. We're located in the world's hottest tech corridors - Silicon Valley, Cambridge, Seattle, Hyderabad, Belfast and Phoenix.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developers.facebook.com/">
+								<img src="assets/img/home/_logos/logo-facebook.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developers.facebook.com/">Facebook</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Founded in 2004, Facebook’s mission is to give people the power to share and make the world more open and connected.
+						</div>
+					</div>
+				</div>
+				<div class="three column row">
+              <div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.att.com/apis">
+								<img src="assets/img/home/_logos/logo-att.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.att.com/apis">AT&amp;T</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							At AT&amp;T, we’re bringing it all together. We’re helping people connect with advanced mobile services, next-generation TV, high-speed Internet services and smart solutions for businesses.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image image-center">
+							<span class="helper"></span>
+							<a href="http://www.indeed.com/publisher">
+								<img src="assets/img/home/_logos/logo-indeed.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="http://www.indeed.com/publisher">Indeed</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							As the world's #1 job site, with over 180 million unique visitors every month from over 50 different countries, Indeed has become the catalyst for putting the world to work. Indeed is intensely passionate about delivering the right fit for every hire.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developers.google.com/apis-explorer/#p/">
+								<img src="assets/img/home/_logos/logo-google.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developers.google.com/apis-explorer/#p/">Google</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Google's mission is to organize the world's information and make it universally accessible and useful. And while we're committed to building the perfect search engine, our work goes well beyond delivering accurate search results. Our strategy is simple: hire great people and support them in turning their aspirations into reality. Googlers are bright, passionate people with diverse backgrounds coming together to create a unique culture. Working at Google is as much a mindset as it is a job!
+						</div>
+					</div>
+				</div>
+
+				<div class="three column row">
+              <div class="column company-panel">
+                <div class="company-image">
+                  <span class="helper"></span>
+                  <a href="http://developer.veevavault.com">
+                    <img src="assets/img/home/_logos/logo-veeva.png">
+                  </a>
+                </div>
+                  <hr/>
+                <div class="company-link center">
+                  <h1><a href="http://developer.veevavault.com">Veeva</a></h1>
+                </div>
+                  <hr/>
+                <div class="company-desc">
+                  Veeva Systems Inc. is a leader in cloud-based software for the global life sciences industry. Committed to innovation, product excellence, and customer success, Veeva has more than 375 customers, ranging from the world's largest pharmaceutical companies to emerging biotechs. Veeva is headquartered in the San Francisco Bay Area, with offices in Europe, Asia, and Latin America.
+                </div>
+              </div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://www.namecheap.com/support/api/intro.aspx">
+								<img src="assets/img/home/_logos/logo-namecheap.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://www.namecheap.com/support/api/intro.aspx">Namecheap</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							In the year 2000, a man named Richard Kirkendall founded a company called Namecheap, with the idea that the average people of the internet deserved value-priced domains and stellar service. These days, Namecheap is a leading ICANN-accredited domain name registrar and web hosting company. We're happy to report: Namecheap has over a million customers and more than three million domains under management. We offer domain names at some of the best prices in the industry, along with full-featured hosting packages, secure SSL certificates, WhoisGuard privacy protection service, and more.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.yahoo.com/yql/">
+								<img src="assets/img/home/_logos/logo-yahoo.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.yahoo.com/yql/">Yahoo!</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Yahoo is a guide focused on informing, connecting, and entertaining our users. By creating highly personalized experiences for our users, we keep people connected to what matters most to them, across devices and around the world. In turn, we create value for advertisers by connecting them with the audiences that build their businesses.
+						</div>
+					</div>
+				</div>
+				<div class="three column row">
+              <div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://cloudera.github.io/cm_api/">
+								<!-- <img src="assets/img/home/_logos/logo-cloudera.png"> -->
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://cloudera.github.io/cm_api/">Cloudera</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							We provide the world’s fastest, easiest, and most secure data platform built on Hadoop. We help solve your most demanding business challenges with data.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="http://www.agrible.com/ag-api/">
+								<img src="assets/img/home/_logos/logo-agrible.png">
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="http://www.agrible.com/ag-api/">Agrible</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Our focus is to provide innovative, easy-to-use products that farmers and companies can use to improve their production. We create predictive analytics tools that deliver field-specific data and forecasts to help with decision-making on the farm. Current customers include independent growers, software developers, soil test laboratories, crop consultants, insurance agencies, commodities companies, traders, and major ag chemical companies developing seed technologies and new production methods.
+						</div>
+					</div>
+					<div class="column company-panel">
+						<div class="company-image">
+							<span class="helper"></span>
+							<a href="https://developer.thalmic.com/">
+								<!-- <img src="assets/img/home/_logos/logo-thalmic.png"> -->
+							</a>
+						</div>
+							<hr/>
+						<div class="company-link center">
+							<h1><a href="https://developer.thalmic.com/">Thalmic Labs</a></h1>
+						</div>
+							<hr/>
+						<div class="company-desc">
+							Led by mechatronics engineers Stephen Lake, Matthew Bailey, and Aaron Grant, we're a world-class team of engineers, researchers and designers building the future of human-computer interaction.
+						</div>
+					</div>
+				</div>
+        <div class="three column row">
+          <div class="column company-panel">
+				<div class="company-image">
+					<span class="helper"></span>
+					<a href="http://www.jetbrains.org/intellij/sdk/docs/index.html">
+						<img src="assets/img/home/_logos/logo-jetbrains.png">
+					</a>
+				</div>
+					<hr/>
+				<div class="company-link center">
+					<h1><a href="http://www.jetbrains.org/intellij/sdk/docs/index.html">Jetbrains</a></h1>
+				</div>
+					<hr/>
+				<div class="company-desc">
+					At JetBrains, code is our passion. For over 15 years we have strived to make the strongest, most effective developer tools on earth. By automating routine checks and corrections, our tools speed up production, freeing developers to grow, discover and create.
+				</div>
+			</div>
+        </div>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+  {% endblock %} {% block body_scripts %}
+  <script src="/assets/js/external.min.js"></script>
+  {% endblock %}

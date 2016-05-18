@@ -1,0 +1,49 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; Mentorship {% endblock %}
+{% block head_styles %}
+    <link rel="stylesheet" href="/assets/css/external.min.css" />
+
+    <script type="text/javascript">
+      window.location = "https://mentor.hackillinois.org";
+    </script>
+    <style>
+      .logo {
+        display: block;
+        width: 120px;
+        margin: 0 auto 50px;
+        max-width: 300px;
+        float: none;
+      }
+
+      tr:nth-child(odd) td:hover {
+        background-color: #FEFEFE;
+        color: #333;
+      }
+
+      tr:nth-child(even) td:hover {
+        background-color: rgb(241, 241, 241);
+        color: #333;
+      }
+
+      #hardwareTable {
+        max-width: 960px;
+      }
+
+    </style>
+  {% endblock %}
+{% block body %}
+    <div class="header">
+      <img src="assets/img/hardware/logo.png" class="logo" />
+      <h1 class="title">HARDWARE CHECKOUT LIST</h1>
+    </div>
+    <table id="hardwareTable" style="clear: left;">
+      <tr>
+          <th>Hardware</th>
+          <th>Quantity</th>
+          <th>Description</th>
+      </tr>
+    </table>
+
+  {% endblock %} {% block body_scripts %}
+  <script type="text/javascript" src="assets/js/hardware.min.js"></script>
+  {% endblock %}

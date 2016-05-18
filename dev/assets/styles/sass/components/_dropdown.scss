@@ -1,0 +1,97 @@
+$border-width: 2px; // TODO: make this global
+div.dropdown {
+  @extend %bordered-input;
+  @extend %joined-input;
+  @include span-columns(9, table);
+  padding: 0;
+  margin-top: 0;
+  cursor: pointer;
+  div.selection {
+    display: table;
+    align-items: center;
+    height: 100%;
+    span.text {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 0.75em;
+    }
+  }
+  ul {
+    @include calc(width, "100% + #{$border-width}");
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+    left: -$border-width;
+    background-color: $white;
+    display: none;
+  }
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: $border-width solid $lavender;
+    padding: 15px;
+    &:not(:first-of-type) {
+      border-top: 0;
+    }
+    &:hover {
+      background-color: $muted-white;
+    }
+  }
+  li.selected {
+    background-color: $dust;
+  }
+}
+div.dropdown.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+button.arrow {
+  @extend %joined-button;
+  @include span-columns(3, table);
+  position: relative;
+
+  span.chevron{
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-top: -0.25em;
+    @media (max-width: 550px) {
+      margin-left: -0.5em;
+    }
+    @media (min-width: 550px) {
+      margin-left: -0.73em;
+    }
+  }
+
+  span.chevron:before,
+  span.chevron:after {
+    position: absolute;
+    display: block;
+    content: "";
+    @media (max-width: 550px) {
+      border: 0.5em solid transparent;
+    }
+    @media (min-width: 550px) {
+      border: 0.75em solid transparent;
+      }
+  }
+
+  span.chevron:before{
+      top: 0;
+      border-top-color: $white;
+  }
+
+  span.chevron:after{
+    @media (max-width: 550px) {
+      top: -0.15em;
+    }
+    @media (min-width: 550px) {
+      top: -0.25em;
+    }
+    border-top-color: $blue;
+  }
+
+}

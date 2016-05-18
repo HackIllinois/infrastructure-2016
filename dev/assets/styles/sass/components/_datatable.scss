@@ -1,0 +1,36 @@
+table#table {
+  min-height: 30px;
+  tr {
+    cursor: pointer;
+  }
+}
+
+div#table_wrapper {
+  div#search-col {
+    padding: 0;
+  }
+  div#select-query {
+    margin-right: 1em;
+  }
+  div#table_processing {
+    margin-top: 1.1em;
+    z-index: 1;
+  }
+  div#table_length {
+    padding-top: 0.75em;
+  }
+   div#table_info {
+     padding-top: 0;
+   }
+  form#search {
+    span.input-group-btn button {
+      width: 100%;
+    }
+  }
+  div.pull-right {
+    @media screen and (max-width: 767px) {
+      float: none !important;
+      text-align: center;
+    }
+  }
+}

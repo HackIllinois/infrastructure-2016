@@ -1,0 +1,183 @@
+{% extends "templates/base.html" %}
+{% block title %} HackIllinois &middot; Judging {% endblock %}
+{% block head_styles %}
+  <link rel="stylesheet" href="/assets/css/external.min.css" />
+
+<style>
+  #wrapper {max-width: 960px;}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="background"></div>
+<div id="container" class="bannerLayout">
+    <div id="content">
+        <div id="wrapper">
+            <h1 class="text-header">HACKILLINOIS 2016 JUDGING</h1>
+            Judging itself will take place on <b>Sunday February 21st starting at 12pm in the Illini Union.</b>
+
+            <div id="intro">
+                <h3>THERE ARE THREE TYPES OF JUDGES:</h3>
+                <ul>
+                    <li><b>HackIllinois Judges</b> for picking our top projects across all submissions</li>
+                    <li><b>VIP Judges</b> who determine the top three overall hardware/software projects</li>
+                    <li><b>Sponsor Judges</b> who select a sponsor prize with some criteria.</li>
+                </ul>
+            </div>
+            <div id="hwsw">
+                <h3>JUDGING FOR HARDWARE AND SOFTWARE:</h3>
+                <div id="open">
+                    <h4>Open Round</h4> From the selection of all projects, HackIllinois judges will determine the top 10 hardware and top 10 software projects.
+                    <p>
+                        <table>
+                            <TR>
+                                <TD class="time">
+                                    <p><b>12pm - 2pm &nbsp</b></p>
+                                </TD>
+                                <TD> Judges will spend ~5 minutes at each project where you will be pitching</TD>
+                            </TR>
+                        </table>
+                    </p>
+                    <TABLE>
+                        <TH class="left">Points</TH>
+                        <TH class="center">Criteria</TH>
+                        <TH class="right">Description</TH>
+                        <TR>
+                            <TD class="left ">0-5</TD>
+                            <TD class="center ">Benefit</TD>
+                            <TD class="right ">This directly derives from one of our core values. We want hackers to contribute back to the field they’re in, so that their work can better benefit the community in the future.</TD>
+                        </TR>
+                        <TR>
+                            <TD class="left">0-5</TD>
+                            <TD class="center ">Technical Difficulty</TD>
+                            <TD class="right ">Hacks can easily have a variety of ranges of difficulty. While a hack with clever usage of several API’s could easily be as innovative as a hack that reverse-engineers a machine, the degree of technical difficulty is vastly
+                                different in the two. We want to reward hackers who demonstrate a large amount of technical prowess in the projects created.</TD>
+                        </TR>
+                        <TR>
+                            <TD class="left ">0-5</TD>
+                            <TD class="center ">Innovation </TD>
+                            <TD class="right ">Reinventing the wheel, no matter how awesome the wheel is, means you still end up with a wheel. Exploration of ideas is a value that we want all hackers to pursue. Even if you’re tackling an old problem, unique solutions are beneficial.
+                                    HackIllinois is looking for novel hacks created from the minds of our  hackers..</TD>
+                        </TR>
+                        <TR>
+                            <TD class="left ">0-5</TD>
+                            <TD class="center ">Viability </TD>
+                            <TD class="right ">We are looking for hacks that are well-built and could easily be continued to become a viable product. The hack should be more than just a pitch.</TD>
+                        </TR>
+                        <br/>
+                        <TR>
+                            <td class="left bot">
+                                <p><b>Bonus</b></p> 0-1
+                            </td>
+                            <TD class="center bot">“It” Factor</TD>
+                            <TD class="right bot">There are certain hacks that just cause you to say “WOW.” We’re looking for hacks that have an “It” factor that blows the pants off people who see it. It is up to the discretion of the judges to identify this intangible
+                                quality of a hack that just amazes people. Used as an endorsement that the 2nd round judges will highly consider when examining the projects
+                            </TD>
+                        </TR>
+                    </TABLE>
+                <br>
+                </div>
+                <br>
+                <div id="elimination">
+
+                    <h4>Elimination Round</h4>
+                    </p>
+                    Judges will judge the top 10 Hardware and 10 Software projects and will reduced to the top 5 Hardware and top 5 Software projects that will move onto the Final Round.
+                    <p>
+                        <table>
+                            <TR>
+                                <TD class="time">
+                                    <p><b>2pm - 2:30pm&nbsp</b></p>
+                                </TD>
+                                <TD> Now you’ll have about ~3 minutes to pitch your project to the HackIllinois judges. Members of the judging staff will also be coming around to examine the engineering behind your hacks</TD>
+                            </TR>
+                        </table>
+                    </p>
+                    <p>
+                        <TABLE>
+                            <TH class="left">Criteria</TH>
+                            <TH class="right">Description</TH>
+                            <TR>
+                                <TD class="left">Benefit</TD>
+                                <TD class="right">This directly derives from one of our core values. We want hackers to contribute back to the field they’re in, so that their work can better benefit the community in the future.</TD>
+                            </TR>
+                            <TR>
+                                <TD class="left">Technical Difficulty</TD>
+                                <TD class="right">Hacks can easily have a variety of ranges of difficulty. While a hack with clever usage of several API’s could easily be as innovative as a hack that reverse-engineers a machine, the degree of technical difficulty is
+                                    vastly different in the two. We want to reward hackers who demonstrate a large amount of technical prowess in the projects created. This means heavy reliance on libraries that abstract a lot of functionally or templates
+                                    should be penalized here.</TD>
+                            </TR>
+                            <TR>
+                                <TD class="left">Innovation</TD>
+                                <TD class="right">Reinventing the wheel, no matter how awesome the wheel is, means you still end up with a wheel. Exploration of ideas is a value that we want all hackers to pursue. Even if you’re tackling an old problem, unique solutions are beneficial.
+                                    HackIllinois is looking for novel hacks created from the minds of our  hackers.
+                                </TD>
+                            </TR>
+                            <TR>
+                                <TD class="left">Viability</TD>
+                                <TD class="right">Code should be polished for a product (aka. no hard-coding, or workarounds that wouldn’t work at scale). We are looking for hacks that are well-built and could easily be continued to become a viable product. The hack
+                                    should be more than just a pitch.</TD>
+                            </TR>
+                            <TR>
+                                <TD class="left bot">“It” Factor</TD>
+                                <TD class="right bot">There are certain hacks that just cause you to say “WOW.” We’re looking for hacks that have an “It” factor. It is up to the discretion of the judges to identify this intangible quality of a hack that just amazes people.
+                                    (Has this project had endorsements from judges in the first round?)</TD>
+                            </TR>
+                        </TABLE>
+
+                    </p>
+        <br>
+                </div>
+                <br>
+                <div id="final">
+
+
+                    <h4>Final Round</h4>
+                    The top five hardware and top five software projects will be presented on stage to be judged.
+                   Our VIP Judges include Pek Pongpaet from Impekable, Tasos Karahalios from IDEO, Chrissy Ziccarelli from Girls Who Code, and a top executive from our co-host IMO.
+                    <p>
+                        <table>
+                            <TR>
+                                <TD class="time">
+                                    <p><b>3pm - 4pm&nbsp</b></p>
+                                </TD>
+                                <TD> The VIP panel will judge the projects presented to determine top three hardware and top three software. Criteria for this round is determined by the VIP judges though it will adhere closely to the previous rounds.</TD>
+                            </TR>
+                        </table>
+                    </p>
+    <br>
+                </div>
+            </div>
+<br>
+            <div id="os">
+                <h3>JUDGING FOR OPEN SOURCE</h3>
+                <p>
+                    <table>
+                        <TR>
+                            <TD class="time"><p><b>12pm - 2pm&nbsp</b></p></TD>
+                            <TD> Open Source Participants (mentors and hackers) are encouraged to visit other open source projects and vote on which they would like to hear more about during the final presentations. Vote using the following link: go.hackillinois.org/osvoting
+                            </TD>
+                        </TR>
+                    </table>
+
+            </div>
+<br>
+            <div id="sponsor">
+                <h3>SPONSORS JUDGING</h3>
+                <p>
+                    <table>
+                        <TR>
+                            <TD class="time"><p><b>12pm - 3:30pm&nbsp</b></p></TD>
+                            <TD> Sponsor judges are chosen directly by sponsors and judge projects based off their own criteria. Not all projects are eligible. API prizes are announced at 2:30pm after all judging has been completed. </TD>
+                        </TR>
+                    </table>
+                </p>
+            </div>
+            <h3>A HUGE THANK YOU!</h3>
+            Thank you to all the judges who’re helping out with this event! Good luck to everyone! If you have any questions, please email us at judges@hackillinois.org!
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,312 @@
+div.pane#success-pane {
+  img#backpack {
+    display: block;
+    width: 20em;
+    height: auto;
+    margin: 0 auto;
+  }
+  h1,
+  h3 {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+  }
+  div.social-icons {
+    width: 60px;
+    margin: 0 auto;
+    margin-top: 10px;
+    img.social-icon {
+      width: 27px;
+    }
+    a:not(:first-of-type) {
+      padding-left: 3px;
+    }
+  }
+  div#review {
+    margin-top: 30px;
+    text-align: center;
+    a {
+      font-size: 1.25em;
+    }
+    a:visited {
+      color: $orange;
+    }
+  }
+}
+
+div.pane#registration-pane {
+  div.footer {
+    @include pad(0 2em);
+    hr {
+      margin-top: 0.5em;
+    }
+    span#nav-back {
+      position: relative;
+      float: right;
+      right: 55%;
+    }
+    span#nav-next {
+      position: relative;
+      float: left;
+      left: 55%;
+    }
+    span.registration-nav {
+      cursor: pointer;
+      display: none;
+    }
+    span.registration-nav.visible {
+      display: inline-block;
+    }
+  }
+
+  div#progress-block {
+    margin: 2.2em 0;
+    div.progress-container {
+      @include span-columns(4 of 25, table);
+      img.progress-icon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 3em;
+        @media (max-width: 500px) {
+          height: 2.5em;
+        }
+      }
+      img.progress-icon.active,
+      img.progress-icon.complete {
+        display: none;
+      }
+      span.progress-caption {
+        display: block;
+        text-align: center;
+        margin-top: 0.75em;
+        color: $dust;
+        font-size: 1em;
+        @media (max-width: 500px) and (min-width: 450px) {
+          font-size: 0.9em;
+        }
+        @media (max-width: 450px) and (min-width: 400px) {
+          font-size: 0.8em;
+        }
+        @media (max-width: 400px) {
+          font-size: 0.75em;
+        }
+      }
+    }
+    div.progress-container.active,
+    div.progress-container.complete {
+      img.progress-icon {
+        display: none;
+      }
+      img.progress-icon.active {
+        display: block;
+      }
+    }
+    div.progress-path-container {
+      visibility: hidden;
+      vertical-align: middle;
+      @include span-columns(3 of 25, table);
+      @include omega();
+      hr {
+        display: block;
+        width: 100%;
+        margin: 0;
+        margin-top: -0.5em;
+        background-color: $orange;
+        border: 0.05em solid $orange;
+        border-radius: 6px;
+        height: 3px;
+      }
+    }
+    div.progress-path-container.active,
+    div.progress-path-container.complete {
+      visibility: visible;
+    }
+  }
+  div#animator.animating {
+    // prevents jQuery from making page jump significantly on animate
+    margin-top: -20px;
+    overflow: hidden;
+    position: static !important;
+  }
+  div#title-block {
+    margin: 0.75em;
+    margin-bottom: 0;
+    h3.section-title {
+      display: none;
+      color: $light-purple;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    h3.section-title.active {
+      display: block;
+    }
+  }
+  div#form-block {
+    .selectize-control.multi .selectize-input {
+      div.item {
+        margin-top: -0.1em;
+        padding: 0 0.5em;
+        border-radius: 2px;
+        background-color: $orange;
+        color: $white;
+      }
+      div.item.active {
+        background-color: lighten($orange, 10%);
+      }
+    }
+    div.selectize-dropdown-content {
+      font-size: $font-size;
+    }
+    form {
+      display: none;
+    }
+    form.active {
+      display: block;
+    }
+    form#general {
+      div#name,
+      div#schooling,
+      div#age-gender {
+        input,
+        div.selectize-control {
+          // each input gets 6/12 columns
+          @include horizontal(6);
+        }
+      }
+      input#major + div.selectize-control,
+      input#age + div.selectize-control {
+        div.selectize-input {
+          @extend %horizontal-first;
+        }
+      }
+      input#graduation-year + div.selectize-control,
+      input#gender + div.selectize-control {
+        float: right;
+        div.selectize-input {
+          @extend %horizontal-last;
+          border-left: 0;
+        }
+      }
+      div#age-gender {
+        margin-bottom: 2.5em;
+      }
+    }
+    form#personal {
+      div#shirt-size {
+        div#shirt-caption {
+          @include span-columns(2);
+          margin-top: 0.2em;
+        }
+        div.circular-option {
+          @include span-columns(2);
+          margin-top: 0;
+        }
+      }
+    }
+    form#professional {
+      div#resume {
+        button#resume-upload {
+          @include span-columns(12);
+        }
+        input#resume-filename, input#resume-file,
+        button#resume-change, div#resume-caption {
+          display: none;
+        }
+
+        input#resume-filename {
+          margin: 0;
+        }
+
+        input.error ~ button#resume-upload {
+          border: 2px solid $red;
+          background-color: $light-red;
+          color: $red;
+        }
+      }
+      div#resume.uploaded {
+        button#resume-upload {
+          display: none;
+        }
+        input#resume-filename {
+          @include span-columns(9, table);
+        }
+        button#resume-change {
+          @include span-columns(3, table);
+        }
+        div#resume-caption {
+          display: block;
+        }
+      }
+      div.social {
+        margin: 1em 0;
+        margin-top: 0;
+        input[type="text"] {
+          margin: 0;
+        }
+      }
+    }
+    form#hackathon-a {
+      div.dropdown-container {
+        @include span-columns(4);
+      }
+      div.member-container.hidden {
+        display: none;
+      }
+      div#hackathon-initiatives {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        div.row.initiative {
+          div.square-option {
+            @include span-columns(1);
+            @media (max-width: 450px) {
+              margin-right: 5%;
+            }
+          }
+          div.description {
+            @include span-columns(10);
+          }
+        }
+      }
+      div#hackathon-initiatives.error {
+        span.option {
+          @extend %error_special;
+        }
+      }
+      input.error ~ div.dropdown {
+        @extend %joined-input-error;
+        border-radius: 2px;
+        border-color: $red;
+        color: $red;
+        background-color: $light-red;
+        ul {
+          color: $text-black;
+        }
+      }
+    }
+    form#hackathon-b {
+      div#hackathon-team-members-followup {
+        div.selectize-control {
+          height: auto;
+          div.selectize-input.input-active {
+            height: auto;
+            div.item {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      button {
+        @include span-columns(12);
+        @extend %basic-input;
+        height: auto;
+        color: $white;
+        background-color: $orange;
+      }
+      button[disabled] {
+        background-color: $light-orange;
+      }
+    }
+  }
+}

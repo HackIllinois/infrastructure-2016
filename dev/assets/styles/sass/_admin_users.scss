@@ -1,0 +1,10 @@
+form#add-user {
+  ul.parsley-errors-list {
+    list-style-type: none;
+    padding-top: 0.25em;
+    padding-left: 0.5em;
+    li {
+      color: $red;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# OS  generated files #
+#######################
+.DS_Store
+.DS_Store?
+
+# Dowloaded dependencies #
+##########################
+node_modules/
+
+# Compiled source #
+###################
+dist/
+*.pyc
+
+# HackIllinois files #
+######################
+.venv/
+www/libs
+
+keyfile
+
+# App Engine files #
+####################
+.temp/
+/app.yaml
+/cron.yaml

@@ -1,0 +1,46 @@
+header.status-bar {
+  @include row();
+  @include pad(0 3em);
+  @include size(auto $status-bar-height);
+  color: $muted-white;
+  div#app-status-container {
+    @include span-columns(6);
+    @extend %valign-parent;
+    height: 100%;
+    div#app-status {
+      @extend %valign;
+      span#app-status-detail.status-incomplete {
+        color: $orange;
+      }
+      span#app-status-detail.status-complete,
+      span#app-status-detail.status-accepted {
+        color: $turquoise;
+      }
+      span#app-status-result {
+        color: $orange;
+      }
+      span#app-status-result.done {
+        color: $turquoise;
+      }
+      span#app-status-action {
+        a {
+          text-decoration: none;
+          color: $muted-white;
+        }
+      }
+    }
+  }
+  div#auth-status-container {
+    @include span-columns(6);
+    @extend %valign-parent;
+    height: 100%;
+    text-align: right;
+    div#auth-status {
+      @extend %valign;
+      span.log-out {
+        cursor: pointer;
+        color: $orange;
+      }
+    }
+  }
+}

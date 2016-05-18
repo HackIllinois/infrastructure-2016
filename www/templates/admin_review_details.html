@@ -1,0 +1,188 @@
+{% extends "templates/admin_base.html" %}
+{% block title %} Review {% endblock %}
+{% block body %}
+
+{% set registrant = data.subject.registrant %}
+{% set registration = data.subject.registrant.registration %}
+
+{% if registration %}
+  {% set status = registrant.status|capitalize %}
+  <h1 class="no-bottom">{{ registrant.first_name }} {{ registrant.last_name }}
+            (<span class="{{ status|lower }}">{{ status }}</span>)
+  </h1>
+
+  <h2>Registration</h2>
+  <hr />
+  <div class="row top-buffer">
+    <div class="col-sm-6">
+      <h3>General Information</h3>
+      <dl class="dl-horizontal">
+        <dt>Age</dt>
+        <dd>{{ registration.age }}</dd>
+        <dt>Gender</dt>
+        <dd>{{ registration.gender|capitalize|replace("_", " ") }}</dd>
+        <dt>School</dt>
+        <dd>{{ registration.school }}</dd>
+        <dt>Major</dt>
+        <dd>{{ registration.major }}</dd>
+        <dt>Graduation Year</dt>
+        <dd>{{ registration.graduation_year }}</dd>
+      </dl>
+    </div>
+    <div class="col-sm-6">
+      <h3>Personal Information</h3>
+      <dl class="dl-horizontal">
+        <dt>Diet</dt>
+        <dd>{{ registration.diet|capitalize|replace("_", " ") }}</dd>
+        <dt>Dietary Restrictions</dt>
+        <dd>{{ registration.dietary_restrictions if registration.dietary_restrictions else 'None' }}</dd>
+        <dt>T-Shirt Size</dt>
+        <dd>{{ registrant.shirt_size }}</dd>
+        <dt>Contact Number</dt>
+        <dd>{{ registrant.phone_number }}</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Professional Information</h3>
+      <dl class="dl-horizontal">
+        <dt>Resume</dt>
+        <dd><a href="/download/resume/{{ registration.resume }}" target="_blank">View</a></dd>
+        <dt>Position(s) of Interest</dt>
+        {% if registration.professional_interest == 'BOTH' %}
+        <dd>Full-time &amp; Internships </dd>
+        {% else %}
+        <dd>{{ registration.professional_interest|capitalize|replace("_", " ") }}</dd>
+        {% endif %}
+        <dt>LinkedIn</dt>
+        {% set linkedin = registration.linkedin_url if registration.linkedin_url else None %}
+        {% if linkedin %}
+        <dd><a href="{{ linkedin if linkedin.startswith('http') else '//' + linkedin }}" target="_blank">{{ linkedin }}</a></dd>
+        {% else %}
+        <dd>None</dd>
+        {% endif %}
+        <dt>GitHub</dt>
+        {% set github = registration.github_url if registration.github_url else None %}
+        {% if github %}
+        <dd><a href="{{ github if github.startswith('http') else '//' + github }}" target="_blank">{{ github }}</a></dd>
+        {% else %}
+        <dd>None</dd>
+        {% endif %}
+        <dt>Personal Site</dt>
+        {% set site = registration.site_url if registration.site_url else None %}
+        {% if site %}
+        <dd><a href="{{ site if site.startswith('http') else '//' + site }}" target="_blank">{{ site }}</a></dd>
+        {% else %}
+        <dd>None</dd>
+        {% endif %}
+      </dl>
+    </div>
+    <div class="col-sm-6">
+      <h3>Hackathon Information</h3>
+      <dl class="dl-horizontal">
+        <dt>Hackathons Attended</dt>
+        <dd>{{ registration.hackathon_attendance }}</dd>
+        <dt>Initiative(s)</dt>
+        <dd>{{ registration.initiatives|join(", ")|capitalize|replace("_", " ") }}</dd>
+        <dt>Teammates</dt>
+        <dd>{{ registration.team_member_emails|join(", ") if registration.team_member_emails else 'None' }}</dd>
+        <dt>Hardware Desired</dt>
+        <dd>{{ registration.hardware_desired if registration.hardware_desired else 'None' }}</dd>
+        <dt>Open-Source Interests</dt>
+        <dd>{{ registration.open_source_interests if registration.open_source_interests else 'None' }}</dd>
+        <dt>Extra Information</dt>
+        <dd>{{ registration.extra_information if registration.extra_information else 'None' }}</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-6 col-sm-6">
+      <h6 class="pull-right">Registered since {{ registration.created.strftime("%m/%d/%Y") }}</h6>
+    </div>
+  </div>
+  {% if data.user.permissions|group_by_name('hackillinois.*')|first %}
+    <h2>Decision</h2>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <p>You may change the applicant's status below. If you are accepting an applicant, you
+        will be prompted to provide the initiative for which you are excepting him/her.</p>
+      </div>
+    </div>
+    <form id="status-change" class="form-horizontal">
+      <div id="status-select" class="form-group">
+        <label class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-10">
+          <label class="radio-inline">
+            <input type="radio" name="status" id="status-accepted" value="ACCEPTED" {{ 'checked' if registrant.status == 'ACCEPTED' else '' }} data-parsley-required data-parsley-errors-container="#status-errors"> Accepted
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="status" id="status-waitlisted" value="WAITLISTED" {{ 'checked' if registrant.status == 'WAITLISTED' else '' }}> Waitlisted
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="status" id="status-rejected" value="REJECTED" {{ 'checked' if registrant.status == 'REJECTED' else '' }}> Rejected
+          </label>
+          <span id="status-errors"></span>
+        </div>
+      </div>
+      <div id="initiative-select" class="form-group {{ 'hidden' if registrant.status != 'ACCEPTED' else '' }}">
+        <label class="col-sm-2 control-label">Initiative</label>
+        <div class="col-sm-10">
+          <label class="radio-inline">
+            <input type="radio" name="initiative" id="initiative-software" value="SOFTWARE" {{ 'checked' if registrant.initiative == 'SOFTWARE' else '' }} data-parsley-required data-parsley-errors-container="#initiative-errors"> Software
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="initiative" id="initiative-hardware" value="HARDWARE" {{ 'checked' if registrant.initiative == 'HARDWARE' else '' }}> Hardware
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="initiative" id="initiative-opensource" value="OPEN_SOURCE" {{ 'checked' if registrant.initiative == 'OPEN_SOURCE' else '' }}> Open Source
+          </label>
+          <span id="initiative-errors"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Notification Wave</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="wave" name="wave" data-parsley-required data-parsley-errors-container="#wave-errors">
+              <option value="" {{ 'selected' if (not registrant.notification_wave and registrant.notification_wave != 0) else '' }} disabled>Choose an Option</option>
+              <option value="0" {{ 'selected' if registrant.notification_wave == 0 else 'disabled' }}>Wave 0 (added by staff)</option>
+              {% for wave in range(1, 11) %}
+                <option value="{{wave}}" {{ 'disabled' if wave in data.waves_sent else '' }} {{ 'selected' if registrant.notification_wave == wave else '' }}>Wave {{ wave }}</option>
+              {% endfor %}
+            </select>
+            {% if registrant.notification_wave and registrant.notification_sent %}
+              {% if registrant.notification_wave in data.waves_sent and registrant.notification_wave == registrant.notification_wave_sent  %}
+              <h6>Notification sent</h6>
+              {% else %}
+              <h6>Notification sent in wave {{ registrant.notification_wave_sent if registrant.notification_wave_sent else '0' }}, but may be outdated</h6>
+              {% endif %}
+            {% endif %}
+            <span id="wave-errors"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-default" id="status-submit" type="submit">Save Changes</button>
+        </div>
+      </div>
+    </form>
+    {% if registrant.status != 'PENDING' %}
+      <div class="row">
+        <div class="col-sm-offset-6 col-sm-6">
+          <h6 class="pull-right">Decision made by {{ registrant.reviewer }}</h6>
+        </div>
+      </div>
+    {% endif%}
+  {% endif %}
+  {% else %}
+  <h1>{{ data.subject.email }}</h1>
+  <p class="lead">
+    No registration information
+  </p>
+  {% endif %}
+
+{% endblock %}
+{% block body_scripts %}
+<script src="/assets/js/admin_review_details.min.js"></script>
+{% endblock %}

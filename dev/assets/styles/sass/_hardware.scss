@@ -1,0 +1,58 @@
+body {
+  background-color: #413F56;
+}
+
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  border-spacing: 0;
+}
+
+td, th {
+  border: 1px solid transparent;
+  height: 40px;
+  transition: all 0.3s;
+}
+
+th {
+  background: #E1AF89;
+  font-weight: bold;
+}
+
+td {
+  background: #E98473;
+  text-align: center;
+}
+
+tr:nth-child(even) td { background: #F1F1F1; }
+tr:nth-child(odd) td { background: #FEFEFE; }
+tr td:hover { background: #E98473; color: #FFF; }
+
+.header {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 auto 0 auto;
+  width: 8%;
+  margin-left: 20px;
+  height: auto;
+  float: left;
+}
+
+@font-face {
+    font-family: "BrandonBold";
+    src: url("../fonts/BrandonGrotesque/Brandon_bld.woff") format('woff');
+}
+
+.title {
+  font-family: BrandonBold;
+  font-size: 38;
+  color: #fff;
+}

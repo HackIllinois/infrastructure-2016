@@ -1,0 +1,77 @@
+{# WARNING: This template has been archived! #}
+{# We keep its raw markup here (with inline JS), but some references may change #}
+
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+	<meta name="author" content="HackIllinois Staff">
+	<meta name="description" content="Explore new frontiers on Feb 19 - 21st at University of Illinois at Urbana-Champaign's hackathon.">
+
+	<title>Explore New Frontiers!</title>
+	<link rel="shortcut icon" media="all" type="image/x-icon" href="/assets/img/favicon.ico" />
+	<link rel="icon" media="all" type="image/vnd.microsoft.icon" href="/assets/img/favicon.ico" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="/assets/css/archive.min.css" />
+</head>
+
+<body>
+
+	<button id="volume"></button>
+
+	<section id="landing" class="signup">
+		<div>
+			<a href="/"><img class="logo" src="/assets/img/logo.png" /></a>
+			<div id="compass-wrapper">
+				<img class="fireflies" src="/assets/img/fireflies.gif" />
+				<img id="compass" src="/assets/img/compass.png" />
+				<a id="compass-text">Find the compass!</a>
+			</div>
+			<h2 id="event-title">Explore New Frontiers</h2>
+			<h2 id="found-title">You found the way!</h2>
+			<h3 class="event-date">Feb. 19 - 21, 2016</h3>
+			<div class="form-wrapper">
+				<p id="form-text">Be the first to know when the adventure begins.</p>
+				<input id="form-input" placeholder="future-adventurer@forest.com">
+				<button id="submit">Submit</button>
+				<p id="submit-text">Thank you for submitting! </p>
+			</div>
+			<a id="replay">Replay Game</a>
+		</div>
+	</section>
+
+	<section id="game">
+		<video id="night" autoplay loop>
+			<source src="/assets/img/night.mp4" type="video/mp4">
+		</video>
+		<video id="day" autoplay loop>
+			<source src="/assets/img/day.mp4" type="video/mp4">
+		</video>
+		<audio id="theme" loop>
+			<source src="/assets/audio/background-crickets.mp3" type="audio/mpeg">
+		</audio>
+		<canvas id="forest"></canvas>
+	</section>
+
+	<footer>
+		<p class="inspiration"> Inspired by <a href="http://sloth.animade.tv/" target="_blank">The Lost Sloth</a> </p>
+		<p class="back"> <a href="/archive/landing">Back</a> </p>
+	</footer>
+
+	<script src="/assets/js/vendor_main.min.js"></script>
+	<script src="/assets/js/common.min.js"></script>
+	<script>
+	   "use strict";function getWidth(){var t=1300;return window.innerWidth>t?t:window.innerWidth}function scaleImages(){var t=1.6;w=canvas.width,h=canvas.width/t,compassX=posX*w,compassY=posY*h}function drawClip(t,a){ctx.drawImage(night,0,0,w,h),sctx.clearRect(0,0,scratchCanvas.width,scratchCanvas.height),sctx.globalCompositeOperation="source-over",sctx.drawImage(day,0,0,w,h),sctx.drawImage(compass,compassX,compassY,compassW,compassH),sctx.fillStyle="#fff",sctx.globalCompositeOperation="destination-in",sctx.beginPath(),sctx.arc(t,a,clipRadius,0,2*Math.PI,!0),sctx.closePath(),sctx.fill(),ctx.drawImage(scratchCanvas,0,0)}function isCompass(t,a){return t>compassX&&compassX+compassW>t&&a>compassY&&compassY+compassY>a?!0:!1}function clickCompass(t,a){if(isCompass(t,a)){$("#game").removeClass("running"),$("footer").fadeOut(),$("#volume").fadeOut();var s=document.getElementById("theme");s.pause(),$("#compass-wrapper").addClass("found"),$("#event-title").addClass("found"),$("#found-title").addClass("found"),$("#replay").addClass("found"),$("#landing").fadeIn(800)}}function draw(){rect=canvas.getBoundingClientRect(),ctx.drawImage(night,0,0,w,h),drawClip(mouse.x,mouse.y),setTimeout(draw,35)}function redraw(){scaleImages(),ctx.canvas.width=getWidth(),ctx.canvas.height=h,clipRadius=.04*canvas.width}function setupMouse(t,a,s,e){function n(t){mouse.x=t.clientX-rect.left,mouse.y=t.clientY-rect.top}function o(t){mouse.x=t.clientX-rect.left,mouse.y=t.clientY-rect.top,s(mouse.x,mouse.y)}var c=t.addEventListener.bind(t);c("mousemove",n),t.addEventListener("click",o,!1)}function init(){canvas=document.getElementById("forest"),ctx=canvas.getContext("2d"),scratchCanvas=document.createElement("canvas"),sctx=scratchCanvas.getContext("2d"),day=document.getElementById("day"),night=document.getElementById("night"),rect=null,setupMouse(canvas,drawClip,clickCompass,!0),ctx.canvas.width=getWidth(),ctx.canvas.height=window.innerHeight,scratchCanvas.width=ctx.canvas.width,scratchCanvas.height=ctx.canvas.height,compass=new Image,compass.src="/assets/img/glowingcompass.png",compassLocations=[{x:.14,y:.61},{x:.28,y:.86},{x:.58,y:.59},{x:.69,y:.82},{x:.83,y:.61}],rand=Math.floor(5*Math.random()),posX=compassLocations[rand].x,posY=compassLocations[rand].y,compassX=0,compassY=0,compassW=40,compassH=46,clipRadius=50,w=0,h=0,mouse={x:-200,y:-200},4===day.readyState?(scaleImages(),draw(),$(".loader").addClass("done")):setTimeout(init,100),window.onresize=redraw}function submitEmail(t){}var canvas,ctx,scratchCanvas,sctx,day,night,rect,compass,compassLocations,rand,posX,posY,compassX,compassY,compassW,compassH,clipRadius,w,h,mouse,theme=document.getElementById("theme");$("#compass-text, #replay").click(function(){$("#landing").fadeOut(800),$("#game").addClass("running"),$("footer").fadeIn(),$("#volume").fadeIn(),theme.play(),init()}),$("#volume").click(function(){$(this).toggleClass("muted"),theme.muted=!theme.muted}),$("#submit").click(function(){var t=/\S+@\S+\.\S+/,a=$("#form-input").val();t.test(a)?(submitEmail(a),$("#form-input").fadeTo(500,0),$("#submit").fadeTo(500,0),$("#form-text").fadeTo(500,0),$("#submit-text").fadeIn(500)):($("input").addClass("flash"),setTimeout(function(){$("input").removeClass("flash")},750),$("#form-text").text("Please enter a valid email address"))}),$("#form-input").keydown(function(t){13===t.which&&$("#submit").click()}),function(){for(var t,a=function(){},s=["assert","clear","count","debug","dir","dirxml","error","exception","group","groupCollapsed","groupEnd","info","log","markTimeline","profile","profileEnd","table","time","timeEnd","timeline","timelineEnd","timeStamp","trace","warn"],e=s.length,n=window.console=window.console||{};e--;)t=s[e],n[t]||(n[t]=a)}();
+	</script>
+
+</body>
+
+</html>

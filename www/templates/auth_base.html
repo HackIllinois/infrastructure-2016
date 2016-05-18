@@ -1,0 +1,58 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<header class="status-bar">
+    <div id="app-status-container">
+    </div>
+    <div id="auth-status-container">
+      <div id="auth-status">
+        You are not logged in
+      </div>
+    </div>
+  </header>
+  <section id="auth-parent" class="stage">
+    <section id="auth-child" class="center-stage">
+      <div id="header-pane">
+          <div id="icon-block" class="row">
+            <a href="/">
+              <img id="logo" src="assets/img/logo.png">
+            </a>
+          </div>
+          <div id="title-block" class="row">
+            <h3 class="section-title" >{% block section_title %}{% endblock %}</h3>
+          </div>
+      </div>
+      <div id="auth-pane">
+        <div id="form-block" class="row">
+          <div class="row bordered left-block">
+
+          </div>
+          <form id="auth" class="active" method="post">
+            <div id="input-container">
+              {% block inputs %}{% endblock %}
+            </div>
+            <div id="buttonContainer">
+              {% block buttons %}{% endblock %}
+            </div>
+            {% block form_extras %}{% endblock %}
+          </form>
+
+          {% block containers %}{% endblock %}
+
+          <div id="auth-errors" class="row bordered right-block">
+            <div id="email-error" class="error-container">
+            </div>
+            <div id="password-error" class="error-container">
+            </div>
+            <div id="confirm-password-error" class="error-container">
+            </div>
+          </div>
+        </div>
+    </section>
+  </section>
+{% endblock %}
+{% block body_scripts %}
+  <script src="/assets/js/auth.min.js"/></script>
+{% endblock %}
